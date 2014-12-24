@@ -1,0 +1,1723 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="IPACCRMModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ACCOUNTS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="DELETED" Type="bit" Nullable="false" />
+          <Property Name="CREATED_BY" Type="uniqueidentifier" />
+          <Property Name="DATE_ENTERED" Type="datetime" Nullable="false" />
+          <Property Name="MODIFIED_USER_ID" Type="uniqueidentifier" />
+          <Property Name="DATE_MODIFIED" Type="datetime" Nullable="false" />
+          <Property Name="DATE_MODIFIED_UTC" Type="datetime" />
+          <Property Name="ASSIGNED_USER_ID" Type="uniqueidentifier" />
+          <Property Name="TEAM_ID" Type="uniqueidentifier" />
+          <Property Name="ACCOUNT_NUMBER" Type="nvarchar" MaxLength="30" />
+          <Property Name="NAME" Type="nvarchar" MaxLength="150" />
+          <Property Name="ACCOUNT_TYPE" Type="nvarchar" MaxLength="25" />
+          <Property Name="PARENT_ID" Type="uniqueidentifier" />
+          <Property Name="INDUSTRY" Type="nvarchar" MaxLength="25" />
+          <Property Name="ANNUAL_REVENUE" Type="nvarchar" MaxLength="25" />
+          <Property Name="PHONE_FAX" Type="nvarchar" MaxLength="25" />
+          <Property Name="BILLING_ADDRESS_STREET" Type="nvarchar" MaxLength="150" />
+          <Property Name="BILLING_ADDRESS_CITY" Type="nvarchar" MaxLength="100" />
+          <Property Name="BILLING_ADDRESS_STATE" Type="nvarchar" MaxLength="100" />
+          <Property Name="BILLING_ADDRESS_POSTALCODE" Type="nvarchar" MaxLength="20" />
+          <Property Name="BILLING_ADDRESS_COUNTRY" Type="nvarchar" MaxLength="100" />
+          <Property Name="DESCRIPTION" Type="nvarchar(max)" />
+          <Property Name="RATING" Type="nvarchar" MaxLength="25" />
+          <Property Name="PHONE_OFFICE" Type="nvarchar" MaxLength="25" />
+          <Property Name="PHONE_ALTERNATE" Type="nvarchar" MaxLength="25" />
+          <Property Name="EMAIL1" Type="nvarchar" MaxLength="100" />
+          <Property Name="EMAIL2" Type="nvarchar" MaxLength="100" />
+          <Property Name="WEBSITE" Type="nvarchar" MaxLength="255" />
+          <Property Name="OWNERSHIP" Type="nvarchar" MaxLength="100" />
+          <Property Name="EMPLOYEES" Type="nvarchar" MaxLength="10" />
+          <Property Name="TICKER_SYMBOL" Type="nvarchar" MaxLength="10" />
+          <Property Name="SIC_CODE" Type="nvarchar" MaxLength="10" />
+          <Property Name="SHIPPING_ADDRESS_STREET" Type="nvarchar" MaxLength="150" />
+          <Property Name="SHIPPING_ADDRESS_CITY" Type="nvarchar" MaxLength="100" />
+          <Property Name="SHIPPING_ADDRESS_STATE" Type="nvarchar" MaxLength="100" />
+          <Property Name="SHIPPING_ADDRESS_POSTALCODE" Type="nvarchar" MaxLength="20" />
+          <Property Name="SHIPPING_ADDRESS_COUNTRY" Type="nvarchar" MaxLength="100" />
+          <Property Name="CAMPAIGN_ID" Type="uniqueidentifier" />
+          <Property Name="TEAM_SET_ID" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="ACL_ROLES">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="DELETED" Type="bit" Nullable="false" />
+          <Property Name="CREATED_BY" Type="uniqueidentifier" />
+          <Property Name="DATE_ENTERED" Type="datetime" Nullable="false" />
+          <Property Name="MODIFIED_USER_ID" Type="uniqueidentifier" />
+          <Property Name="DATE_MODIFIED" Type="datetime" Nullable="false" />
+          <Property Name="DATE_MODIFIED_UTC" Type="datetime" />
+          <Property Name="NAME" Type="nvarchar" MaxLength="150" />
+          <Property Name="DESCRIPTION" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="CAMPAIGNS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="DELETED" Type="bit" Nullable="false" />
+          <Property Name="CREATED_BY" Type="uniqueidentifier" />
+          <Property Name="DATE_ENTERED" Type="datetime" Nullable="false" />
+          <Property Name="MODIFIED_USER_ID" Type="uniqueidentifier" />
+          <Property Name="DATE_MODIFIED" Type="datetime" Nullable="false" />
+          <Property Name="DATE_MODIFIED_UTC" Type="datetime" />
+          <Property Name="ASSIGNED_USER_ID" Type="uniqueidentifier" />
+          <Property Name="TEAM_ID" Type="uniqueidentifier" />
+          <Property Name="TRACKER_KEY" Type="nvarchar" MaxLength="30" />
+          <Property Name="TRACKER_COUNT" Type="int" />
+          <Property Name="IMPRESSIONS" Type="int" />
+          <Property Name="NAME" Type="nvarchar" MaxLength="50" />
+          <Property Name="REFER_URL" Type="nvarchar" MaxLength="255" />
+          <Property Name="TRACKER_TEXT" Type="nvarchar" MaxLength="255" />
+          <Property Name="START_DATE" Type="datetime" />
+          <Property Name="END_DATE" Type="datetime" />
+          <Property Name="STATUS" Type="nvarchar" MaxLength="25" />
+          <Property Name="BUDGET" Type="money" />
+          <Property Name="BUDGET_USDOLLAR" Type="money" />
+          <Property Name="EXPECTED_COST" Type="money" />
+          <Property Name="EXPECTED_COST_USDOLLAR" Type="money" />
+          <Property Name="ACTUAL_COST" Type="money" />
+          <Property Name="ACTUAL_COST_USDOLLAR" Type="money" />
+          <Property Name="EXPECTED_REVENUE" Type="money" />
+          <Property Name="EXPECTED_REVENUE_USDOLLAR" Type="money" />
+          <Property Name="CAMPAIGN_TYPE" Type="nvarchar" MaxLength="25" />
+          <Property Name="FREQUENCY" Type="nvarchar" MaxLength="25" />
+          <Property Name="OBJECTIVE" Type="nvarchar(max)" />
+          <Property Name="CONTENT" Type="nvarchar(max)" />
+          <Property Name="CURRENCY_ID" Type="uniqueidentifier" />
+          <Property Name="TEAM_SET_ID" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="CASES">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="DELETED" Type="bit" Nullable="false" />
+          <Property Name="CREATED_BY" Type="uniqueidentifier" />
+          <Property Name="DATE_ENTERED" Type="datetime" Nullable="false" />
+          <Property Name="MODIFIED_USER_ID" Type="uniqueidentifier" />
+          <Property Name="DATE_MODIFIED" Type="datetime" Nullable="false" />
+          <Property Name="DATE_MODIFIED_UTC" Type="datetime" />
+          <Property Name="ASSIGNED_USER_ID" Type="uniqueidentifier" />
+          <Property Name="TEAM_ID" Type="uniqueidentifier" />
+          <Property Name="CASE_NUMBER" Type="nvarchar" MaxLength="30" />
+          <Property Name="NAME" Type="nvarchar" MaxLength="255" />
+          <Property Name="ACCOUNT_NAME" Type="nvarchar" MaxLength="100" />
+          <Property Name="ACCOUNT_ID" Type="uniqueidentifier" />
+          <Property Name="B2C_CONTACT_ID" Type="uniqueidentifier" />
+          <Property Name="STATUS" Type="nvarchar" MaxLength="25" />
+          <Property Name="PRIORITY" Type="nvarchar" MaxLength="25" />
+          <Property Name="TYPE" Type="nvarchar" MaxLength="25" />
+          <Property Name="DESCRIPTION" Type="nvarchar(max)" />
+          <Property Name="RESOLUTION" Type="nvarchar(max)" />
+          <Property Name="WORK_LOG" Type="nvarchar(max)" />
+          <Property Name="TEAM_SET_ID" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="CONTACTS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="DELETED" Type="bit" Nullable="false" />
+          <Property Name="CREATED_BY" Type="uniqueidentifier" />
+          <Property Name="DATE_ENTERED" Type="datetime" Nullable="false" />
+          <Property Name="MODIFIED_USER_ID" Type="uniqueidentifier" />
+          <Property Name="DATE_MODIFIED" Type="datetime" Nullable="false" />
+          <Property Name="DATE_MODIFIED_UTC" Type="datetime" />
+          <Property Name="ASSIGNED_USER_ID" Type="uniqueidentifier" />
+          <Property Name="TEAM_ID" Type="uniqueidentifier" />
+          <Property Name="SALUTATION" Type="nvarchar" MaxLength="25" />
+          <Property Name="FIRST_NAME" Type="nvarchar" MaxLength="100" />
+          <Property Name="LAST_NAME" Type="nvarchar" MaxLength="100" />
+          <Property Name="LEAD_SOURCE" Type="nvarchar" MaxLength="100" />
+          <Property Name="TITLE" Type="nvarchar" MaxLength="50" />
+          <Property Name="DEPARTMENT" Type="nvarchar" MaxLength="100" />
+          <Property Name="REPORTS_TO_ID" Type="uniqueidentifier" />
+          <Property Name="BIRTHDATE" Type="datetime" />
+          <Property Name="DO_NOT_CALL" Type="bit" />
+          <Property Name="PHONE_HOME" Type="nvarchar" MaxLength="25" />
+          <Property Name="PHONE_MOBILE" Type="nvarchar" MaxLength="25" />
+          <Property Name="PHONE_WORK" Type="nvarchar" MaxLength="25" />
+          <Property Name="PHONE_OTHER" Type="nvarchar" MaxLength="25" />
+          <Property Name="PHONE_FAX" Type="nvarchar" MaxLength="25" />
+          <Property Name="EMAIL1" Type="nvarchar" MaxLength="100" />
+          <Property Name="EMAIL2" Type="nvarchar" MaxLength="100" />
+          <Property Name="ASSISTANT" Type="nvarchar" MaxLength="75" />
+          <Property Name="ASSISTANT_PHONE" Type="nvarchar" MaxLength="25" />
+          <Property Name="EMAIL_OPT_OUT" Type="bit" />
+          <Property Name="INVALID_EMAIL" Type="bit" />
+          <Property Name="SMS_OPT_IN" Type="nvarchar" MaxLength="25" />
+          <Property Name="TWITTER_SCREEN_NAME" Type="nvarchar" MaxLength="20" />
+          <Property Name="PRIMARY_ADDRESS_STREET" Type="nvarchar" MaxLength="150" />
+          <Property Name="PRIMARY_ADDRESS_CITY" Type="nvarchar" MaxLength="100" />
+          <Property Name="PRIMARY_ADDRESS_STATE" Type="nvarchar" MaxLength="100" />
+          <Property Name="PRIMARY_ADDRESS_POSTALCODE" Type="nvarchar" MaxLength="20" />
+          <Property Name="PRIMARY_ADDRESS_COUNTRY" Type="nvarchar" MaxLength="100" />
+          <Property Name="ALT_ADDRESS_STREET" Type="nvarchar" MaxLength="150" />
+          <Property Name="ALT_ADDRESS_CITY" Type="nvarchar" MaxLength="100" />
+          <Property Name="ALT_ADDRESS_STATE" Type="nvarchar" MaxLength="100" />
+          <Property Name="ALT_ADDRESS_POSTALCODE" Type="nvarchar" MaxLength="20" />
+          <Property Name="ALT_ADDRESS_COUNTRY" Type="nvarchar" MaxLength="100" />
+          <Property Name="DESCRIPTION" Type="nvarchar(max)" />
+          <Property Name="PORTAL_NAME" Type="nvarchar" MaxLength="255" />
+          <Property Name="PORTAL_PASSWORD" Type="nvarchar" MaxLength="32" />
+          <Property Name="PORTAL_ACTIVE" Type="bit" />
+          <Property Name="PORTAL_APP" Type="nvarchar" MaxLength="255" />
+          <Property Name="CAMPAIGN_ID" Type="uniqueidentifier" />
+          <Property Name="TEAM_SET_ID" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="DOCUMENTS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="DELETED" Type="bit" Nullable="false" />
+          <Property Name="CREATED_BY" Type="uniqueidentifier" />
+          <Property Name="DATE_ENTERED" Type="datetime" Nullable="false" />
+          <Property Name="MODIFIED_USER_ID" Type="uniqueidentifier" />
+          <Property Name="DATE_MODIFIED" Type="datetime" Nullable="false" />
+          <Property Name="DATE_MODIFIED_UTC" Type="datetime" />
+          <Property Name="ASSIGNED_USER_ID" Type="uniqueidentifier" />
+          <Property Name="TEAM_ID" Type="uniqueidentifier" />
+          <Property Name="DOCUMENT_NAME" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="ACTIVE_DATE" Type="datetime" />
+          <Property Name="EXP_DATE" Type="datetime" />
+          <Property Name="DESCRIPTION" Type="nvarchar(max)" />
+          <Property Name="CATEGORY_ID" Type="nvarchar" MaxLength="25" />
+          <Property Name="SUBCATEGORY_ID" Type="nvarchar" MaxLength="25" />
+          <Property Name="STATUS_ID" Type="nvarchar" MaxLength="25" />
+          <Property Name="DOCUMENT_REVISION_ID" Type="uniqueidentifier" />
+          <Property Name="MAIL_MERGE_DOCUMENT" Type="bit" />
+          <Property Name="RELATED_DOC_ID" Type="uniqueidentifier" />
+          <Property Name="RELATED_DOC_REV_ID" Type="uniqueidentifier" />
+          <Property Name="IS_TEMPLATE" Type="bit" />
+          <Property Name="TEMPLATE_TYPE" Type="nvarchar" MaxLength="25" />
+          <Property Name="PRIMARY_MODULE" Type="nvarchar" MaxLength="25" />
+          <Property Name="SECONDARY_MODULE" Type="nvarchar" MaxLength="25" />
+          <Property Name="TEAM_SET_ID" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="EMAIL_TEMPLATES">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="DELETED" Type="bit" Nullable="false" />
+          <Property Name="CREATED_BY" Type="uniqueidentifier" />
+          <Property Name="DATE_ENTERED" Type="datetime" Nullable="false" />
+          <Property Name="MODIFIED_USER_ID" Type="uniqueidentifier" />
+          <Property Name="DATE_MODIFIED" Type="datetime" Nullable="false" />
+          <Property Name="DATE_MODIFIED_UTC" Type="datetime" />
+          <Property Name="ASSIGNED_USER_ID" Type="uniqueidentifier" />
+          <Property Name="TEAM_ID" Type="uniqueidentifier" />
+          <Property Name="PUBLISHED" Type="bit" />
+          <Property Name="READ_ONLY" Type="bit" />
+          <Property Name="TEXT_ONLY" Type="bit" />
+          <Property Name="NAME" Type="nvarchar" MaxLength="255" />
+          <Property Name="DESCRIPTION" Type="nvarchar(max)" />
+          <Property Name="SUBJECT" Type="nvarchar" MaxLength="255" />
+          <Property Name="BODY" Type="nvarchar(max)" />
+          <Property Name="BODY_HTML" Type="nvarchar(max)" />
+          <Property Name="TEAM_SET_ID" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="EMAILS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="DELETED" Type="bit" Nullable="false" />
+          <Property Name="CREATED_BY" Type="uniqueidentifier" />
+          <Property Name="DATE_ENTERED" Type="datetime" Nullable="false" />
+          <Property Name="MODIFIED_USER_ID" Type="uniqueidentifier" />
+          <Property Name="DATE_MODIFIED" Type="datetime" Nullable="false" />
+          <Property Name="DATE_MODIFIED_UTC" Type="datetime" />
+          <Property Name="ASSIGNED_USER_ID" Type="uniqueidentifier" />
+          <Property Name="TEAM_ID" Type="uniqueidentifier" />
+          <Property Name="NAME" Type="nvarchar" MaxLength="255" />
+          <Property Name="DATE_START" Type="datetime" />
+          <Property Name="TIME_START" Type="datetime" />
+          <Property Name="PARENT_TYPE" Type="nvarchar" MaxLength="25" />
+          <Property Name="PARENT_ID" Type="uniqueidentifier" />
+          <Property Name="DESCRIPTION" Type="nvarchar(max)" />
+          <Property Name="DESCRIPTION_HTML" Type="nvarchar(max)" />
+          <Property Name="FROM_ADDR" Type="nvarchar" MaxLength="100" />
+          <Property Name="FROM_NAME" Type="nvarchar" MaxLength="100" />
+          <Property Name="TO_ADDRS" Type="nvarchar(max)" />
+          <Property Name="CC_ADDRS" Type="nvarchar(max)" />
+          <Property Name="BCC_ADDRS" Type="nvarchar(max)" />
+          <Property Name="TO_ADDRS_IDS" Type="nvarchar(max)" />
+          <Property Name="TO_ADDRS_NAMES" Type="nvarchar(max)" />
+          <Property Name="TO_ADDRS_EMAILS" Type="nvarchar(max)" />
+          <Property Name="CC_ADDRS_IDS" Type="nvarchar(max)" />
+          <Property Name="CC_ADDRS_NAMES" Type="nvarchar(max)" />
+          <Property Name="CC_ADDRS_EMAILS" Type="nvarchar(max)" />
+          <Property Name="BCC_ADDRS_IDS" Type="nvarchar(max)" />
+          <Property Name="BCC_ADDRS_NAMES" Type="nvarchar(max)" />
+          <Property Name="BCC_ADDRS_EMAILS" Type="nvarchar(max)" />
+          <Property Name="TYPE" Type="nvarchar" MaxLength="25" />
+          <Property Name="STATUS" Type="nvarchar" MaxLength="25" />
+          <Property Name="MESSAGE_ID" Type="varchar" MaxLength="851" />
+          <Property Name="REPLY_TO_NAME" Type="nvarchar" MaxLength="100" />
+          <Property Name="REPLY_TO_ADDR" Type="nvarchar" MaxLength="100" />
+          <Property Name="INTENT" Type="nvarchar" MaxLength="25" />
+          <Property Name="MAILBOX_ID" Type="uniqueidentifier" />
+          <Property Name="RAW_SOURCE" Type="nvarchar(max)" />
+          <Property Name="TEAM_SET_ID" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="LEADS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="DELETED" Type="bit" Nullable="false" />
+          <Property Name="CREATED_BY" Type="uniqueidentifier" />
+          <Property Name="DATE_ENTERED" Type="datetime" Nullable="false" />
+          <Property Name="MODIFIED_USER_ID" Type="uniqueidentifier" />
+          <Property Name="DATE_MODIFIED" Type="datetime" Nullable="false" />
+          <Property Name="DATE_MODIFIED_UTC" Type="datetime" />
+          <Property Name="ASSIGNED_USER_ID" Type="uniqueidentifier" />
+          <Property Name="TEAM_ID" Type="uniqueidentifier" />
+          <Property Name="CONVERTED" Type="bit" Nullable="false" />
+          <Property Name="SALUTATION" Type="nvarchar" MaxLength="25" />
+          <Property Name="FIRST_NAME" Type="nvarchar" MaxLength="100" />
+          <Property Name="LAST_NAME" Type="nvarchar" MaxLength="100" />
+          <Property Name="TITLE" Type="nvarchar" MaxLength="100" />
+          <Property Name="REFERED_BY" Type="nvarchar" MaxLength="100" />
+          <Property Name="LEAD_SOURCE" Type="nvarchar" MaxLength="100" />
+          <Property Name="LEAD_SOURCE_DESCRIPTION" Type="nvarchar(max)" />
+          <Property Name="STATUS" Type="nvarchar" MaxLength="100" />
+          <Property Name="STATUS_DESCRIPTION" Type="nvarchar(max)" />
+          <Property Name="DEPARTMENT" Type="nvarchar" MaxLength="100" />
+          <Property Name="REPORTS_TO_ID" Type="uniqueidentifier" />
+          <Property Name="BIRTHDATE" Type="datetime" />
+          <Property Name="DO_NOT_CALL" Type="bit" />
+          <Property Name="PHONE_HOME" Type="nvarchar" MaxLength="25" />
+          <Property Name="PHONE_MOBILE" Type="nvarchar" MaxLength="25" />
+          <Property Name="PHONE_WORK" Type="nvarchar" MaxLength="25" />
+          <Property Name="PHONE_OTHER" Type="nvarchar" MaxLength="25" />
+          <Property Name="PHONE_FAX" Type="nvarchar" MaxLength="25" />
+          <Property Name="EMAIL1" Type="nvarchar" MaxLength="100" />
+          <Property Name="EMAIL2" Type="nvarchar" MaxLength="100" />
+          <Property Name="ASSISTANT" Type="nvarchar" MaxLength="75" />
+          <Property Name="ASSISTANT_PHONE" Type="nvarchar" MaxLength="25" />
+          <Property Name="WEBSITE" Type="nvarchar" MaxLength="255" />
+          <Property Name="EMAIL_OPT_OUT" Type="bit" />
+          <Property Name="INVALID_EMAIL" Type="bit" />
+          <Property Name="SMS_OPT_IN" Type="nvarchar" MaxLength="25" />
+          <Property Name="TWITTER_SCREEN_NAME" Type="nvarchar" MaxLength="20" />
+          <Property Name="PRIMARY_ADDRESS_STREET" Type="nvarchar" MaxLength="150" />
+          <Property Name="PRIMARY_ADDRESS_CITY" Type="nvarchar" MaxLength="100" />
+          <Property Name="PRIMARY_ADDRESS_STATE" Type="nvarchar" MaxLength="100" />
+          <Property Name="PRIMARY_ADDRESS_POSTALCODE" Type="nvarchar" MaxLength="20" />
+          <Property Name="PRIMARY_ADDRESS_COUNTRY" Type="nvarchar" MaxLength="100" />
+          <Property Name="ALT_ADDRESS_STREET" Type="nvarchar" MaxLength="150" />
+          <Property Name="ALT_ADDRESS_CITY" Type="nvarchar" MaxLength="100" />
+          <Property Name="ALT_ADDRESS_STATE" Type="nvarchar" MaxLength="100" />
+          <Property Name="ALT_ADDRESS_POSTALCODE" Type="nvarchar" MaxLength="20" />
+          <Property Name="ALT_ADDRESS_COUNTRY" Type="nvarchar" MaxLength="100" />
+          <Property Name="DESCRIPTION" Type="nvarchar(max)" />
+          <Property Name="ACCOUNT_NAME" Type="nvarchar" MaxLength="150" />
+          <Property Name="ACCOUNT_DESCRIPTION" Type="nvarchar(max)" />
+          <Property Name="CONTACT_ID" Type="uniqueidentifier" />
+          <Property Name="ACCOUNT_ID" Type="uniqueidentifier" />
+          <Property Name="OPPORTUNITY_ID" Type="uniqueidentifier" />
+          <Property Name="OPPORTUNITY_NAME" Type="nvarchar" MaxLength="255" />
+          <Property Name="OPPORTUNITY_AMOUNT" Type="nvarchar" MaxLength="50" />
+          <Property Name="PORTAL_NAME" Type="nvarchar" MaxLength="255" />
+          <Property Name="PORTAL_APP" Type="nvarchar" MaxLength="255" />
+          <Property Name="CAMPAIGN_ID" Type="uniqueidentifier" />
+          <Property Name="TEAM_SET_ID" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="MEETINGS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="DELETED" Type="bit" Nullable="false" />
+          <Property Name="CREATED_BY" Type="uniqueidentifier" />
+          <Property Name="DATE_ENTERED" Type="datetime" Nullable="false" />
+          <Property Name="MODIFIED_USER_ID" Type="uniqueidentifier" />
+          <Property Name="DATE_MODIFIED" Type="datetime" Nullable="false" />
+          <Property Name="DATE_MODIFIED_UTC" Type="datetime" />
+          <Property Name="ASSIGNED_USER_ID" Type="uniqueidentifier" />
+          <Property Name="TEAM_ID" Type="uniqueidentifier" />
+          <Property Name="NAME" Type="nvarchar" MaxLength="150" />
+          <Property Name="LOCATION" Type="nvarchar" MaxLength="50" />
+          <Property Name="DURATION_HOURS" Type="int" />
+          <Property Name="DURATION_MINUTES" Type="int" />
+          <Property Name="DATE_START" Type="datetime" />
+          <Property Name="TIME_START" Type="datetime" />
+          <Property Name="DATE_END" Type="datetime" />
+          <Property Name="STATUS" Type="nvarchar" MaxLength="25" />
+          <Property Name="PARENT_TYPE" Type="nvarchar" MaxLength="25" />
+          <Property Name="PARENT_ID" Type="uniqueidentifier" />
+          <Property Name="REMINDER_TIME" Type="int" />
+          <Property Name="DESCRIPTION" Type="nvarchar(max)" />
+          <Property Name="OUTLOOK_ID" Type="nvarchar" MaxLength="255" />
+          <Property Name="TEAM_SET_ID" Type="uniqueidentifier" />
+          <Property Name="EMAIL_REMINDER_TIME" Type="int" />
+          <Property Name="SMS_REMINDER_TIME" Type="int" />
+          <Property Name="REPEAT_TYPE" Type="nvarchar" MaxLength="25" />
+          <Property Name="REPEAT_INTERVAL" Type="int" />
+          <Property Name="REPEAT_DOW" Type="nvarchar" MaxLength="7" />
+          <Property Name="REPEAT_UNTIL" Type="datetime" />
+          <Property Name="REPEAT_COUNT" Type="int" />
+          <Property Name="REPEAT_PARENT_ID" Type="uniqueidentifier" />
+          <Property Name="RECURRING_SOURCE" Type="nvarchar" MaxLength="25" />
+          <Property Name="ALL_DAY_EVENT" Type="bit" />
+        </EntityType>
+        <EntityType Name="NOTES">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="DELETED" Type="bit" Nullable="false" />
+          <Property Name="CREATED_BY" Type="uniqueidentifier" />
+          <Property Name="DATE_ENTERED" Type="datetime" Nullable="false" />
+          <Property Name="MODIFIED_USER_ID" Type="uniqueidentifier" />
+          <Property Name="DATE_MODIFIED" Type="datetime" Nullable="false" />
+          <Property Name="DATE_MODIFIED_UTC" Type="datetime" />
+          <Property Name="ASSIGNED_USER_ID" Type="uniqueidentifier" />
+          <Property Name="TEAM_ID" Type="uniqueidentifier" />
+          <Property Name="NAME" Type="nvarchar" MaxLength="255" />
+          <Property Name="FILENAME" Type="nvarchar" MaxLength="255" />
+          <Property Name="FILE_MIME_TYPE" Type="nvarchar" MaxLength="100" />
+          <Property Name="PARENT_TYPE" Type="nvarchar" MaxLength="25" />
+          <Property Name="PARENT_ID" Type="uniqueidentifier" />
+          <Property Name="CONTACT_ID" Type="uniqueidentifier" />
+          <Property Name="PORTAL_FLAG" Type="bit" Nullable="false" />
+          <Property Name="EMBED_FLAG" Type="bit" />
+          <Property Name="DESCRIPTION" Type="nvarchar(max)" />
+          <Property Name="NOTE_ATTACHMENT_ID" Type="uniqueidentifier" />
+          <Property Name="TEAM_SET_ID" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="PROJECT">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="DELETED" Type="bit" Nullable="false" />
+          <Property Name="CREATED_BY" Type="uniqueidentifier" />
+          <Property Name="DATE_ENTERED" Type="datetime" Nullable="false" />
+          <Property Name="MODIFIED_USER_ID" Type="uniqueidentifier" />
+          <Property Name="DATE_MODIFIED" Type="datetime" Nullable="false" />
+          <Property Name="DATE_MODIFIED_UTC" Type="datetime" />
+          <Property Name="ASSIGNED_USER_ID" Type="uniqueidentifier" />
+          <Property Name="TEAM_ID" Type="uniqueidentifier" />
+          <Property Name="NAME" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ESTIMATED_START_DATE" Type="datetime" />
+          <Property Name="ESTIMATED_END_DATE" Type="datetime" />
+          <Property Name="STATUS" Type="nvarchar" MaxLength="25" />
+          <Property Name="PRIORITY" Type="nvarchar" MaxLength="25" />
+          <Property Name="IS_TEMPLATE" Type="bit" />
+          <Property Name="DESCRIPTION" Type="nvarchar(max)" />
+          <Property Name="TEAM_SET_ID" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="TASKS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="DELETED" Type="bit" Nullable="false" />
+          <Property Name="CREATED_BY" Type="uniqueidentifier" />
+          <Property Name="DATE_ENTERED" Type="datetime" Nullable="false" />
+          <Property Name="MODIFIED_USER_ID" Type="uniqueidentifier" />
+          <Property Name="DATE_MODIFIED" Type="datetime" Nullable="false" />
+          <Property Name="DATE_MODIFIED_UTC" Type="datetime" />
+          <Property Name="ASSIGNED_USER_ID" Type="uniqueidentifier" />
+          <Property Name="TEAM_ID" Type="uniqueidentifier" />
+          <Property Name="NAME" Type="nvarchar" MaxLength="50" />
+          <Property Name="STATUS" Type="nvarchar" MaxLength="25" />
+          <Property Name="DATE_DUE_FLAG" Type="bit" />
+          <Property Name="DATE_DUE" Type="datetime" />
+          <Property Name="TIME_DUE" Type="datetime" />
+          <Property Name="DATE_START_FLAG" Type="bit" />
+          <Property Name="DATE_START" Type="datetime" />
+          <Property Name="TIME_START" Type="datetime" />
+          <Property Name="PARENT_TYPE" Type="nvarchar" MaxLength="25" />
+          <Property Name="PARENT_ID" Type="uniqueidentifier" />
+          <Property Name="CONTACT_ID" Type="uniqueidentifier" />
+          <Property Name="PRIORITY" Type="nvarchar" MaxLength="25" />
+          <Property Name="DESCRIPTION" Type="nvarchar(max)" />
+          <Property Name="TEAM_SET_ID" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="TEAMS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="DELETED" Type="bit" Nullable="false" />
+          <Property Name="CREATED_BY" Type="uniqueidentifier" />
+          <Property Name="DATE_ENTERED" Type="datetime" Nullable="false" />
+          <Property Name="MODIFIED_USER_ID" Type="uniqueidentifier" />
+          <Property Name="DATE_MODIFIED" Type="datetime" Nullable="false" />
+          <Property Name="DATE_MODIFIED_UTC" Type="datetime" />
+          <Property Name="NAME" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="DESCRIPTION" Type="nvarchar(max)" />
+          <Property Name="PRIVATE" Type="bit" />
+        </EntityType>
+        <EntityType Name="Test_Table">
+          <Key>
+            <PropertyRef Name="SLID" />
+          </Key>
+          <Property Name="SLID" Type="int" Nullable="false" />
+          <Property Name="Year" Type="int" Nullable="false" />
+          <Property Name="Elec" Type="int" Nullable="false" />
+          <Property Name="Book" Type="int" Nullable="false" />
+          <Property Name="Home" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="USERS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="DELETED" Type="bit" Nullable="false" />
+          <Property Name="CREATED_BY" Type="uniqueidentifier" />
+          <Property Name="DATE_ENTERED" Type="datetime" Nullable="false" />
+          <Property Name="MODIFIED_USER_ID" Type="uniqueidentifier" />
+          <Property Name="DATE_MODIFIED" Type="datetime" Nullable="false" />
+          <Property Name="DATE_MODIFIED_UTC" Type="datetime" />
+          <Property Name="USER_NAME" Type="nvarchar" MaxLength="60" />
+          <Property Name="USER_PASSWORD" Type="nvarchar" MaxLength="30" />
+          <Property Name="USER_HASH" Type="nvarchar" MaxLength="32" />
+          <Property Name="FIRST_NAME" Type="nvarchar" MaxLength="30" />
+          <Property Name="LAST_NAME" Type="nvarchar" MaxLength="30" />
+          <Property Name="REPORTS_TO_ID" Type="uniqueidentifier" />
+          <Property Name="IS_ADMIN" Type="bit" />
+          <Property Name="IS_ADMIN_DELEGATE" Type="bit" />
+          <Property Name="RECEIVE_NOTIFICATIONS" Type="bit" />
+          <Property Name="DESCRIPTION" Type="nvarchar(max)" />
+          <Property Name="TITLE" Type="nvarchar" MaxLength="50" />
+          <Property Name="DEPARTMENT" Type="nvarchar" MaxLength="50" />
+          <Property Name="PHONE_HOME" Type="nvarchar" MaxLength="50" />
+          <Property Name="PHONE_MOBILE" Type="nvarchar" MaxLength="50" />
+          <Property Name="PHONE_WORK" Type="nvarchar" MaxLength="50" />
+          <Property Name="PHONE_OTHER" Type="nvarchar" MaxLength="50" />
+          <Property Name="PHONE_FAX" Type="nvarchar" MaxLength="50" />
+          <Property Name="EMAIL1" Type="nvarchar" MaxLength="100" />
+          <Property Name="EMAIL2" Type="nvarchar" MaxLength="100" />
+          <Property Name="STATUS" Type="nvarchar" MaxLength="25" />
+          <Property Name="ADDRESS_STREET" Type="nvarchar" MaxLength="150" />
+          <Property Name="ADDRESS_CITY" Type="nvarchar" MaxLength="100" />
+          <Property Name="ADDRESS_STATE" Type="nvarchar" MaxLength="100" />
+          <Property Name="ADDRESS_COUNTRY" Type="nvarchar" MaxLength="25" />
+          <Property Name="ADDRESS_POSTALCODE" Type="nvarchar" MaxLength="9" />
+          <Property Name="USER_PREFERENCES" Type="nvarchar(max)" />
+          <Property Name="PORTAL_ONLY" Type="bit" />
+          <Property Name="EMPLOYEE_STATUS" Type="nvarchar" MaxLength="25" />
+          <Property Name="MESSENGER_ID" Type="nvarchar" MaxLength="25" />
+          <Property Name="MESSENGER_TYPE" Type="nvarchar" MaxLength="25" />
+          <Property Name="IS_GROUP" Type="bit" />
+          <Property Name="DEFAULT_TEAM" Type="uniqueidentifier" />
+          <Property Name="SYSTEM_GENERATED_PASSWORD" Type="bit" />
+          <Property Name="PWD_LAST_CHANGED" Type="datetime" />
+          <Property Name="MAIL_SMTPUSER" Type="nvarchar" MaxLength="60" />
+          <Property Name="MAIL_SMTPPASS" Type="nvarchar" MaxLength="30" />
+          <Property Name="GOOGLEAPPS_SYNC_CONTACTS" Type="bit" />
+          <Property Name="GOOGLEAPPS_SYNC_CALENDAR" Type="bit" />
+          <Property Name="GOOGLEAPPS_USERNAME" Type="nvarchar" MaxLength="100" />
+          <Property Name="GOOGLEAPPS_PASSWORD" Type="nvarchar" MaxLength="100" />
+          <Property Name="FACEBOOK_ID" Type="nvarchar" MaxLength="25" />
+          <Property Name="ICLOUD_SYNC_CONTACTS" Type="bit" />
+          <Property Name="ICLOUD_SYNC_CALENDAR" Type="bit" />
+          <Property Name="ICLOUD_USERNAME" Type="nvarchar" MaxLength="100" />
+          <Property Name="ICLOUD_PASSWORD" Type="nvarchar" MaxLength="100" />
+          <Property Name="ICLOUD_CTAG_CONTACTS" Type="varchar" MaxLength="100" />
+          <Property Name="ICLOUD_CTAG_CALENDAR" Type="varchar" MaxLength="100" />
+          <Property Name="THEME" Type="nvarchar" MaxLength="25" />
+          <Property Name="DATE_FORMAT" Type="nvarchar" MaxLength="25" />
+          <Property Name="TIME_FORMAT" Type="nvarchar" MaxLength="25" />
+          <Property Name="LANG" Type="nvarchar" MaxLength="10" />
+          <Property Name="CURRENCY_ID" Type="uniqueidentifier" />
+          <Property Name="TIMEZONE_ID" Type="uniqueidentifier" />
+          <Property Name="SAVE_QUERY" Type="bit" />
+          <Property Name="GROUP_TABS" Type="bit" />
+          <Property Name="SUBPANEL_TABS" Type="bit" />
+          <Property Name="EXTENSION" Type="nvarchar" MaxLength="25" />
+          <Property Name="SMS_OPT_IN" Type="nvarchar" MaxLength="25" />
+        </EntityType>
+        <EntityContainer Name="IPACCRMModelStoreContainer">
+          <EntitySet Name="ACCOUNTS" EntityType="Self.ACCOUNTS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ACL_ROLES" EntityType="Self.ACL_ROLES" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CAMPAIGNS" EntityType="Self.CAMPAIGNS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CASES" EntityType="Self.CASES" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CONTACTS" EntityType="Self.CONTACTS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DOCUMENTS" EntityType="Self.DOCUMENTS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EMAIL_TEMPLATES" EntityType="Self.EMAIL_TEMPLATES" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EMAILS" EntityType="Self.EMAILS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LEADS" EntityType="Self.LEADS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MEETINGS" EntityType="Self.MEETINGS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NOTES" EntityType="Self.NOTES" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PROJECT" EntityType="Self.PROJECT" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TASKS" EntityType="Self.TASKS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TEAMS" EntityType="Self.TEAMS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Test_Table" EntityType="Self.Test_Table" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="USERS" EntityType="Self.USERS" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="IPACCRMModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ACCOUNT">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="DELETED" Type="Boolean" Nullable="false" />
+          <Property Name="CREATED_BY" Type="Guid" />
+          <Property Name="DATE_ENTERED" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="MODIFIED_USER_ID" Type="Guid" />
+          <Property Name="DATE_MODIFIED" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DATE_MODIFIED_UTC" Type="DateTime" Precision="3" />
+          <Property Name="ASSIGNED_USER_ID" Type="Guid" />
+          <Property Name="TEAM_ID" Type="Guid" />
+          <Property Name="ACCOUNT_NUMBER" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="NAME" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="ACCOUNT_TYPE" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="PARENT_ID" Type="Guid" />
+          <Property Name="INDUSTRY" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="ANNUAL_REVENUE" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="PHONE_FAX" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="BILLING_ADDRESS_STREET" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="BILLING_ADDRESS_CITY" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="BILLING_ADDRESS_STATE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="BILLING_ADDRESS_POSTALCODE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="BILLING_ADDRESS_COUNTRY" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="DESCRIPTION" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RATING" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="PHONE_OFFICE" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="PHONE_ALTERNATE" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="EMAIL1" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="EMAIL2" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="WEBSITE" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="OWNERSHIP" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="EMPLOYEES" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="TICKER_SYMBOL" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="SIC_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="SHIPPING_ADDRESS_STREET" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="SHIPPING_ADDRESS_CITY" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="SHIPPING_ADDRESS_STATE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="SHIPPING_ADDRESS_POSTALCODE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="SHIPPING_ADDRESS_COUNTRY" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CAMPAIGN_ID" Type="Guid" />
+          <Property Name="TEAM_SET_ID" Type="Guid" />
+        </EntityType>
+        <EntityType Name="ACL_ROLES">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="DELETED" Type="Boolean" Nullable="false" />
+          <Property Name="CREATED_BY" Type="Guid" />
+          <Property Name="DATE_ENTERED" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="MODIFIED_USER_ID" Type="Guid" />
+          <Property Name="DATE_MODIFIED" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DATE_MODIFIED_UTC" Type="DateTime" Precision="3" />
+          <Property Name="NAME" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="DESCRIPTION" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="CAMPAIGN">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="DELETED" Type="Boolean" Nullable="false" />
+          <Property Name="CREATED_BY" Type="Guid" />
+          <Property Name="DATE_ENTERED" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="MODIFIED_USER_ID" Type="Guid" />
+          <Property Name="DATE_MODIFIED" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DATE_MODIFIED_UTC" Type="DateTime" Precision="3" />
+          <Property Name="ASSIGNED_USER_ID" Type="Guid" />
+          <Property Name="TEAM_ID" Type="Guid" />
+          <Property Name="TRACKER_KEY" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="TRACKER_COUNT" Type="Int32" />
+          <Property Name="IMPRESSIONS" Type="Int32" />
+          <Property Name="NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="REFER_URL" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="TRACKER_TEXT" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="START_DATE" Type="DateTime" Precision="3" />
+          <Property Name="END_DATE" Type="DateTime" Precision="3" />
+          <Property Name="STATUS" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="BUDGET" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="BUDGET_USDOLLAR" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="EXPECTED_COST" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="EXPECTED_COST_USDOLLAR" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="ACTUAL_COST" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="ACTUAL_COST_USDOLLAR" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="EXPECTED_REVENUE" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="EXPECTED_REVENUE_USDOLLAR" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="CAMPAIGN_TYPE" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="FREQUENCY" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="OBJECTIVE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CONTENT" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CURRENCY_ID" Type="Guid" />
+          <Property Name="TEAM_SET_ID" Type="Guid" />
+        </EntityType>
+        <EntityType Name="Case">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="DELETED" Type="Boolean" Nullable="false" />
+          <Property Name="CREATED_BY" Type="Guid" />
+          <Property Name="DATE_ENTERED" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="MODIFIED_USER_ID" Type="Guid" />
+          <Property Name="DATE_MODIFIED" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DATE_MODIFIED_UTC" Type="DateTime" Precision="3" />
+          <Property Name="ASSIGNED_USER_ID" Type="Guid" />
+          <Property Name="TEAM_ID" Type="Guid" />
+          <Property Name="CASE_NUMBER" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="NAME" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ACCOUNT_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ACCOUNT_ID" Type="Guid" />
+          <Property Name="B2C_CONTACT_ID" Type="Guid" />
+          <Property Name="STATUS" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="PRIORITY" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="TYPE" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="DESCRIPTION" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RESOLUTION" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="WORK_LOG" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TEAM_SET_ID" Type="Guid" />
+        </EntityType>
+        <EntityType Name="CONTACT">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="DELETED" Type="Boolean" Nullable="false" />
+          <Property Name="CREATED_BY" Type="Guid" />
+          <Property Name="DATE_ENTERED" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="MODIFIED_USER_ID" Type="Guid" />
+          <Property Name="DATE_MODIFIED" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DATE_MODIFIED_UTC" Type="DateTime" Precision="3" />
+          <Property Name="ASSIGNED_USER_ID" Type="Guid" />
+          <Property Name="TEAM_ID" Type="Guid" />
+          <Property Name="SALUTATION" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="FIRST_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="LAST_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="LEAD_SOURCE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="TITLE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DEPARTMENT" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="REPORTS_TO_ID" Type="Guid" />
+          <Property Name="BIRTHDATE" Type="DateTime" Precision="3" />
+          <Property Name="DO_NOT_CALL" Type="Boolean" />
+          <Property Name="PHONE_HOME" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="PHONE_MOBILE" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="PHONE_WORK" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="PHONE_OTHER" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="PHONE_FAX" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="EMAIL1" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="EMAIL2" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ASSISTANT" Type="String" MaxLength="75" FixedLength="false" Unicode="true" />
+          <Property Name="ASSISTANT_PHONE" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="EMAIL_OPT_OUT" Type="Boolean" />
+          <Property Name="INVALID_EMAIL" Type="Boolean" />
+          <Property Name="SMS_OPT_IN" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="TWITTER_SCREEN_NAME" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="PRIMARY_ADDRESS_STREET" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="PRIMARY_ADDRESS_CITY" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PRIMARY_ADDRESS_STATE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PRIMARY_ADDRESS_POSTALCODE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="PRIMARY_ADDRESS_COUNTRY" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ALT_ADDRESS_STREET" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="ALT_ADDRESS_CITY" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ALT_ADDRESS_STATE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ALT_ADDRESS_POSTALCODE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="ALT_ADDRESS_COUNTRY" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="DESCRIPTION" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PORTAL_NAME" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="PORTAL_PASSWORD" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Name="PORTAL_ACTIVE" Type="Boolean" />
+          <Property Name="PORTAL_APP" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="CAMPAIGN_ID" Type="Guid" />
+          <Property Name="TEAM_SET_ID" Type="Guid" />
+        </EntityType>
+        <EntityType Name="DOCUMENT">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="DELETED" Type="Boolean" Nullable="false" />
+          <Property Name="CREATED_BY" Type="Guid" />
+          <Property Name="DATE_ENTERED" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="MODIFIED_USER_ID" Type="Guid" />
+          <Property Name="DATE_MODIFIED" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DATE_MODIFIED_UTC" Type="DateTime" Precision="3" />
+          <Property Name="ASSIGNED_USER_ID" Type="Guid" />
+          <Property Name="TEAM_ID" Type="Guid" />
+          <Property Name="DOCUMENT_NAME" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ACTIVE_DATE" Type="DateTime" Precision="3" />
+          <Property Name="EXP_DATE" Type="DateTime" Precision="3" />
+          <Property Name="DESCRIPTION" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CATEGORY_ID" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="SUBCATEGORY_ID" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="STATUS_ID" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="DOCUMENT_REVISION_ID" Type="Guid" />
+          <Property Name="MAIL_MERGE_DOCUMENT" Type="Boolean" />
+          <Property Name="RELATED_DOC_ID" Type="Guid" />
+          <Property Name="RELATED_DOC_REV_ID" Type="Guid" />
+          <Property Name="IS_TEMPLATE" Type="Boolean" />
+          <Property Name="TEMPLATE_TYPE" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="PRIMARY_MODULE" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="SECONDARY_MODULE" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="TEAM_SET_ID" Type="Guid" />
+        </EntityType>
+        <EntityType Name="EMAIL_TEMPLATES">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="DELETED" Type="Boolean" Nullable="false" />
+          <Property Name="CREATED_BY" Type="Guid" />
+          <Property Name="DATE_ENTERED" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="MODIFIED_USER_ID" Type="Guid" />
+          <Property Name="DATE_MODIFIED" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DATE_MODIFIED_UTC" Type="DateTime" Precision="3" />
+          <Property Name="ASSIGNED_USER_ID" Type="Guid" />
+          <Property Name="TEAM_ID" Type="Guid" />
+          <Property Name="PUBLISHED" Type="Boolean" />
+          <Property Name="READ_ONLY" Type="Boolean" />
+          <Property Name="TEXT_ONLY" Type="Boolean" />
+          <Property Name="NAME" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="DESCRIPTION" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SUBJECT" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="BODY" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="BODY_HTML" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TEAM_SET_ID" Type="Guid" />
+        </EntityType>
+        <EntityType Name="EMAIL">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="DELETED" Type="Boolean" Nullable="false" />
+          <Property Name="CREATED_BY" Type="Guid" />
+          <Property Name="DATE_ENTERED" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="MODIFIED_USER_ID" Type="Guid" />
+          <Property Name="DATE_MODIFIED" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DATE_MODIFIED_UTC" Type="DateTime" Precision="3" />
+          <Property Name="ASSIGNED_USER_ID" Type="Guid" />
+          <Property Name="TEAM_ID" Type="Guid" />
+          <Property Name="NAME" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="DATE_START" Type="DateTime" Precision="3" />
+          <Property Name="TIME_START" Type="DateTime" Precision="3" />
+          <Property Name="PARENT_TYPE" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="PARENT_ID" Type="Guid" />
+          <Property Name="DESCRIPTION" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DESCRIPTION_HTML" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FROM_ADDR" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="FROM_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="TO_ADDRS" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CC_ADDRS" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="BCC_ADDRS" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TO_ADDRS_IDS" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TO_ADDRS_NAMES" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TO_ADDRS_EMAILS" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CC_ADDRS_IDS" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CC_ADDRS_NAMES" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CC_ADDRS_EMAILS" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="BCC_ADDRS_IDS" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="BCC_ADDRS_NAMES" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="BCC_ADDRS_EMAILS" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TYPE" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="STATUS" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="MESSAGE_ID" Type="String" MaxLength="851" FixedLength="false" Unicode="false" />
+          <Property Name="REPLY_TO_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="REPLY_TO_ADDR" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="INTENT" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="MAILBOX_ID" Type="Guid" />
+          <Property Name="RAW_SOURCE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TEAM_SET_ID" Type="Guid" />
+        </EntityType>
+        <EntityType Name="LEAD">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="DELETED" Type="Boolean" Nullable="false" />
+          <Property Name="CREATED_BY" Type="Guid" />
+          <Property Name="DATE_ENTERED" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="MODIFIED_USER_ID" Type="Guid" />
+          <Property Name="DATE_MODIFIED" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DATE_MODIFIED_UTC" Type="DateTime" Precision="3" />
+          <Property Name="ASSIGNED_USER_ID" Type="Guid" />
+          <Property Name="TEAM_ID" Type="Guid" />
+          <Property Name="CONVERTED" Type="Boolean" Nullable="false" />
+          <Property Name="SALUTATION" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="FIRST_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="LAST_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="TITLE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="REFERED_BY" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="LEAD_SOURCE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="LEAD_SOURCE_DESCRIPTION" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="STATUS" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="STATUS_DESCRIPTION" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DEPARTMENT" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="REPORTS_TO_ID" Type="Guid" />
+          <Property Name="BIRTHDATE" Type="DateTime" Precision="3" />
+          <Property Name="DO_NOT_CALL" Type="Boolean" />
+          <Property Name="PHONE_HOME" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="PHONE_MOBILE" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="PHONE_WORK" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="PHONE_OTHER" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="PHONE_FAX" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="EMAIL1" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="EMAIL2" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ASSISTANT" Type="String" MaxLength="75" FixedLength="false" Unicode="true" />
+          <Property Name="ASSISTANT_PHONE" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="WEBSITE" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="EMAIL_OPT_OUT" Type="Boolean" />
+          <Property Name="INVALID_EMAIL" Type="Boolean" />
+          <Property Name="SMS_OPT_IN" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="TWITTER_SCREEN_NAME" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="PRIMARY_ADDRESS_STREET" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="PRIMARY_ADDRESS_CITY" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PRIMARY_ADDRESS_STATE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PRIMARY_ADDRESS_POSTALCODE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="PRIMARY_ADDRESS_COUNTRY" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ALT_ADDRESS_STREET" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="ALT_ADDRESS_CITY" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ALT_ADDRESS_STATE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ALT_ADDRESS_POSTALCODE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="ALT_ADDRESS_COUNTRY" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="DESCRIPTION" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ACCOUNT_NAME" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="ACCOUNT_DESCRIPTION" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CONTACT_ID" Type="Guid" />
+          <Property Name="ACCOUNT_ID" Type="Guid" />
+          <Property Name="OPPORTUNITY_ID" Type="Guid" />
+          <Property Name="OPPORTUNITY_NAME" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="OPPORTUNITY_AMOUNT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PORTAL_NAME" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="PORTAL_APP" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="CAMPAIGN_ID" Type="Guid" />
+          <Property Name="TEAM_SET_ID" Type="Guid" />
+        </EntityType>
+        <EntityType Name="MEETING">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="DELETED" Type="Boolean" Nullable="false" />
+          <Property Name="CREATED_BY" Type="Guid" />
+          <Property Name="DATE_ENTERED" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="MODIFIED_USER_ID" Type="Guid" />
+          <Property Name="DATE_MODIFIED" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DATE_MODIFIED_UTC" Type="DateTime" Precision="3" />
+          <Property Name="ASSIGNED_USER_ID" Type="Guid" />
+          <Property Name="TEAM_ID" Type="Guid" />
+          <Property Name="NAME" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="LOCATION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DURATION_HOURS" Type="Int32" />
+          <Property Name="DURATION_MINUTES" Type="Int32" />
+          <Property Name="DATE_START" Type="DateTime" Precision="3" />
+          <Property Name="TIME_START" Type="DateTime" Precision="3" />
+          <Property Name="DATE_END" Type="DateTime" Precision="3" />
+          <Property Name="STATUS" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="PARENT_TYPE" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="PARENT_ID" Type="Guid" />
+          <Property Name="REMINDER_TIME" Type="Int32" />
+          <Property Name="DESCRIPTION" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="OUTLOOK_ID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="TEAM_SET_ID" Type="Guid" />
+          <Property Name="EMAIL_REMINDER_TIME" Type="Int32" />
+          <Property Name="SMS_REMINDER_TIME" Type="Int32" />
+          <Property Name="REPEAT_TYPE" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="REPEAT_INTERVAL" Type="Int32" />
+          <Property Name="REPEAT_DOW" Type="String" MaxLength="7" FixedLength="false" Unicode="true" />
+          <Property Name="REPEAT_UNTIL" Type="DateTime" Precision="3" />
+          <Property Name="REPEAT_COUNT" Type="Int32" />
+          <Property Name="REPEAT_PARENT_ID" Type="Guid" />
+          <Property Name="RECURRING_SOURCE" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="ALL_DAY_EVENT" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="NOTE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="DELETED" Type="Boolean" Nullable="false" />
+          <Property Name="CREATED_BY" Type="Guid" />
+          <Property Name="DATE_ENTERED" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="MODIFIED_USER_ID" Type="Guid" />
+          <Property Name="DATE_MODIFIED" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DATE_MODIFIED_UTC" Type="DateTime" Precision="3" />
+          <Property Name="ASSIGNED_USER_ID" Type="Guid" />
+          <Property Name="TEAM_ID" Type="Guid" />
+          <Property Name="NAME" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="FILENAME" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="FILE_MIME_TYPE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PARENT_TYPE" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="PARENT_ID" Type="Guid" />
+          <Property Name="CONTACT_ID" Type="Guid" />
+          <Property Name="PORTAL_FLAG" Type="Boolean" Nullable="false" />
+          <Property Name="EMBED_FLAG" Type="Boolean" />
+          <Property Name="DESCRIPTION" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="NOTE_ATTACHMENT_ID" Type="Guid" />
+          <Property Name="TEAM_SET_ID" Type="Guid" />
+        </EntityType>
+        <EntityType Name="PROJECT">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="DELETED" Type="Boolean" Nullable="false" />
+          <Property Name="CREATED_BY" Type="Guid" />
+          <Property Name="DATE_ENTERED" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="MODIFIED_USER_ID" Type="Guid" />
+          <Property Name="DATE_MODIFIED" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DATE_MODIFIED_UTC" Type="DateTime" Precision="3" />
+          <Property Name="ASSIGNED_USER_ID" Type="Guid" />
+          <Property Name="TEAM_ID" Type="Guid" />
+          <Property Name="NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ESTIMATED_START_DATE" Type="DateTime" Precision="3" />
+          <Property Name="ESTIMATED_END_DATE" Type="DateTime" Precision="3" />
+          <Property Name="STATUS" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="PRIORITY" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="IS_TEMPLATE" Type="Boolean" />
+          <Property Name="DESCRIPTION" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TEAM_SET_ID" Type="Guid" />
+        </EntityType>
+        <EntityType Name="TASK">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="DELETED" Type="Boolean" Nullable="false" />
+          <Property Name="CREATED_BY" Type="Guid" />
+          <Property Name="DATE_ENTERED" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="MODIFIED_USER_ID" Type="Guid" />
+          <Property Name="DATE_MODIFIED" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DATE_MODIFIED_UTC" Type="DateTime" Precision="3" />
+          <Property Name="ASSIGNED_USER_ID" Type="Guid" />
+          <Property Name="TEAM_ID" Type="Guid" />
+          <Property Name="NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="STATUS" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="DATE_DUE_FLAG" Type="Boolean" />
+          <Property Name="DATE_DUE" Type="DateTime" Precision="3" />
+          <Property Name="TIME_DUE" Type="DateTime" Precision="3" />
+          <Property Name="DATE_START_FLAG" Type="Boolean" />
+          <Property Name="DATE_START" Type="DateTime" Precision="3" />
+          <Property Name="TIME_START" Type="DateTime" Precision="3" />
+          <Property Name="PARENT_TYPE" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="PARENT_ID" Type="Guid" />
+          <Property Name="CONTACT_ID" Type="Guid" />
+          <Property Name="PRIORITY" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="DESCRIPTION" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TEAM_SET_ID" Type="Guid" />
+        </EntityType>
+        <EntityType Name="TEAM">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="DELETED" Type="Boolean" Nullable="false" />
+          <Property Name="CREATED_BY" Type="Guid" />
+          <Property Name="DATE_ENTERED" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="MODIFIED_USER_ID" Type="Guid" />
+          <Property Name="DATE_MODIFIED" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DATE_MODIFIED_UTC" Type="DateTime" Precision="3" />
+          <Property Name="NAME" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DESCRIPTION" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PRIVATE" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="Test_Table">
+          <Key>
+            <PropertyRef Name="SLID" />
+          </Key>
+          <Property Name="SLID" Type="Int32" Nullable="false" />
+          <Property Name="Year" Type="Int32" Nullable="false" />
+          <Property Name="Elec" Type="Int32" Nullable="false" />
+          <Property Name="Book" Type="Int32" Nullable="false" />
+          <Property Name="Home" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="USER">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="DELETED" Type="Boolean" Nullable="false" />
+          <Property Name="CREATED_BY" Type="Guid" />
+          <Property Name="DATE_ENTERED" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="MODIFIED_USER_ID" Type="Guid" />
+          <Property Name="DATE_MODIFIED" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DATE_MODIFIED_UTC" Type="DateTime" Precision="3" />
+          <Property Name="USER_NAME" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="USER_PASSWORD" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="USER_HASH" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Name="FIRST_NAME" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="LAST_NAME" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="REPORTS_TO_ID" Type="Guid" />
+          <Property Name="IS_ADMIN" Type="Boolean" />
+          <Property Name="IS_ADMIN_DELEGATE" Type="Boolean" />
+          <Property Name="RECEIVE_NOTIFICATIONS" Type="Boolean" />
+          <Property Name="DESCRIPTION" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TITLE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DEPARTMENT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PHONE_HOME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PHONE_MOBILE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PHONE_WORK" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PHONE_OTHER" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PHONE_FAX" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EMAIL1" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="EMAIL2" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="STATUS" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="ADDRESS_STREET" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="ADDRESS_CITY" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ADDRESS_STATE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ADDRESS_COUNTRY" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="ADDRESS_POSTALCODE" Type="String" MaxLength="9" FixedLength="false" Unicode="true" />
+          <Property Name="USER_PREFERENCES" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PORTAL_ONLY" Type="Boolean" />
+          <Property Name="EMPLOYEE_STATUS" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="MESSENGER_ID" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="MESSENGER_TYPE" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="IS_GROUP" Type="Boolean" />
+          <Property Name="DEFAULT_TEAM" Type="Guid" />
+          <Property Name="SYSTEM_GENERATED_PASSWORD" Type="Boolean" />
+          <Property Name="PWD_LAST_CHANGED" Type="DateTime" Precision="3" />
+          <Property Name="MAIL_SMTPUSER" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="MAIL_SMTPPASS" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="GOOGLEAPPS_SYNC_CONTACTS" Type="Boolean" />
+          <Property Name="GOOGLEAPPS_SYNC_CALENDAR" Type="Boolean" />
+          <Property Name="GOOGLEAPPS_USERNAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="GOOGLEAPPS_PASSWORD" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="FACEBOOK_ID" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="ICLOUD_SYNC_CONTACTS" Type="Boolean" />
+          <Property Name="ICLOUD_SYNC_CALENDAR" Type="Boolean" />
+          <Property Name="ICLOUD_USERNAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ICLOUD_PASSWORD" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ICLOUD_CTAG_CONTACTS" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ICLOUD_CTAG_CALENDAR" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="THEME" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="DATE_FORMAT" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="TIME_FORMAT" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="LANG" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="CURRENCY_ID" Type="Guid" />
+          <Property Name="TIMEZONE_ID" Type="Guid" />
+          <Property Name="SAVE_QUERY" Type="Boolean" />
+          <Property Name="GROUP_TABS" Type="Boolean" />
+          <Property Name="SUBPANEL_TABS" Type="Boolean" />
+          <Property Name="EXTENSION" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="SMS_OPT_IN" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="IPACCRMEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ACCOUNTS" EntityType="Self.ACCOUNT" />
+          <EntitySet Name="ACL_ROLES" EntityType="Self.ACL_ROLES" />
+          <EntitySet Name="CAMPAIGNS" EntityType="Self.CAMPAIGN" />
+          <EntitySet Name="CASES" EntityType="Self.Case" />
+          <EntitySet Name="CONTACTS" EntityType="Self.CONTACT" />
+          <EntitySet Name="DOCUMENTS" EntityType="Self.DOCUMENT" />
+          <EntitySet Name="EMAIL_TEMPLATES" EntityType="Self.EMAIL_TEMPLATES" />
+          <EntitySet Name="EMAILS" EntityType="Self.EMAIL" />
+          <EntitySet Name="LEADS" EntityType="Self.LEAD" />
+          <EntitySet Name="MEETINGS" EntityType="Self.MEETING" />
+          <EntitySet Name="NOTES" EntityType="Self.NOTE" />
+          <EntitySet Name="PROJECTs" EntityType="Self.PROJECT" />
+          <EntitySet Name="TASKS" EntityType="Self.TASK" />
+          <EntitySet Name="TEAMS" EntityType="Self.TEAM" />
+          <EntitySet Name="Test_Table" EntityType="Self.Test_Table" />
+          <EntitySet Name="USERS" EntityType="Self.USER" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="IPACCRMModelStoreContainer" CdmEntityContainer="IPACCRMEntities1">
+          <EntitySetMapping Name="ACCOUNTS">
+            <EntityTypeMapping TypeName="IPACCRMModel.ACCOUNT">
+              <MappingFragment StoreEntitySet="ACCOUNTS">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="DELETED" ColumnName="DELETED" />
+                <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+                <ScalarProperty Name="DATE_ENTERED" ColumnName="DATE_ENTERED" />
+                <ScalarProperty Name="MODIFIED_USER_ID" ColumnName="MODIFIED_USER_ID" />
+                <ScalarProperty Name="DATE_MODIFIED" ColumnName="DATE_MODIFIED" />
+                <ScalarProperty Name="DATE_MODIFIED_UTC" ColumnName="DATE_MODIFIED_UTC" />
+                <ScalarProperty Name="ASSIGNED_USER_ID" ColumnName="ASSIGNED_USER_ID" />
+                <ScalarProperty Name="TEAM_ID" ColumnName="TEAM_ID" />
+                <ScalarProperty Name="ACCOUNT_NUMBER" ColumnName="ACCOUNT_NUMBER" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="ACCOUNT_TYPE" ColumnName="ACCOUNT_TYPE" />
+                <ScalarProperty Name="PARENT_ID" ColumnName="PARENT_ID" />
+                <ScalarProperty Name="INDUSTRY" ColumnName="INDUSTRY" />
+                <ScalarProperty Name="ANNUAL_REVENUE" ColumnName="ANNUAL_REVENUE" />
+                <ScalarProperty Name="PHONE_FAX" ColumnName="PHONE_FAX" />
+                <ScalarProperty Name="BILLING_ADDRESS_STREET" ColumnName="BILLING_ADDRESS_STREET" />
+                <ScalarProperty Name="BILLING_ADDRESS_CITY" ColumnName="BILLING_ADDRESS_CITY" />
+                <ScalarProperty Name="BILLING_ADDRESS_STATE" ColumnName="BILLING_ADDRESS_STATE" />
+                <ScalarProperty Name="BILLING_ADDRESS_POSTALCODE" ColumnName="BILLING_ADDRESS_POSTALCODE" />
+                <ScalarProperty Name="BILLING_ADDRESS_COUNTRY" ColumnName="BILLING_ADDRESS_COUNTRY" />
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                <ScalarProperty Name="RATING" ColumnName="RATING" />
+                <ScalarProperty Name="PHONE_OFFICE" ColumnName="PHONE_OFFICE" />
+                <ScalarProperty Name="PHONE_ALTERNATE" ColumnName="PHONE_ALTERNATE" />
+                <ScalarProperty Name="EMAIL1" ColumnName="EMAIL1" />
+                <ScalarProperty Name="EMAIL2" ColumnName="EMAIL2" />
+                <ScalarProperty Name="WEBSITE" ColumnName="WEBSITE" />
+                <ScalarProperty Name="OWNERSHIP" ColumnName="OWNERSHIP" />
+                <ScalarProperty Name="EMPLOYEES" ColumnName="EMPLOYEES" />
+                <ScalarProperty Name="TICKER_SYMBOL" ColumnName="TICKER_SYMBOL" />
+                <ScalarProperty Name="SIC_CODE" ColumnName="SIC_CODE" />
+                <ScalarProperty Name="SHIPPING_ADDRESS_STREET" ColumnName="SHIPPING_ADDRESS_STREET" />
+                <ScalarProperty Name="SHIPPING_ADDRESS_CITY" ColumnName="SHIPPING_ADDRESS_CITY" />
+                <ScalarProperty Name="SHIPPING_ADDRESS_STATE" ColumnName="SHIPPING_ADDRESS_STATE" />
+                <ScalarProperty Name="SHIPPING_ADDRESS_POSTALCODE" ColumnName="SHIPPING_ADDRESS_POSTALCODE" />
+                <ScalarProperty Name="SHIPPING_ADDRESS_COUNTRY" ColumnName="SHIPPING_ADDRESS_COUNTRY" />
+                <ScalarProperty Name="CAMPAIGN_ID" ColumnName="CAMPAIGN_ID" />
+                <ScalarProperty Name="TEAM_SET_ID" ColumnName="TEAM_SET_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ACL_ROLES">
+            <EntityTypeMapping TypeName="IPACCRMModel.ACL_ROLES">
+              <MappingFragment StoreEntitySet="ACL_ROLES">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="DELETED" ColumnName="DELETED" />
+                <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+                <ScalarProperty Name="DATE_ENTERED" ColumnName="DATE_ENTERED" />
+                <ScalarProperty Name="MODIFIED_USER_ID" ColumnName="MODIFIED_USER_ID" />
+                <ScalarProperty Name="DATE_MODIFIED" ColumnName="DATE_MODIFIED" />
+                <ScalarProperty Name="DATE_MODIFIED_UTC" ColumnName="DATE_MODIFIED_UTC" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CAMPAIGNS">
+            <EntityTypeMapping TypeName="IPACCRMModel.CAMPAIGN">
+              <MappingFragment StoreEntitySet="CAMPAIGNS">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="DELETED" ColumnName="DELETED" />
+                <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+                <ScalarProperty Name="DATE_ENTERED" ColumnName="DATE_ENTERED" />
+                <ScalarProperty Name="MODIFIED_USER_ID" ColumnName="MODIFIED_USER_ID" />
+                <ScalarProperty Name="DATE_MODIFIED" ColumnName="DATE_MODIFIED" />
+                <ScalarProperty Name="DATE_MODIFIED_UTC" ColumnName="DATE_MODIFIED_UTC" />
+                <ScalarProperty Name="ASSIGNED_USER_ID" ColumnName="ASSIGNED_USER_ID" />
+                <ScalarProperty Name="TEAM_ID" ColumnName="TEAM_ID" />
+                <ScalarProperty Name="TRACKER_KEY" ColumnName="TRACKER_KEY" />
+                <ScalarProperty Name="TRACKER_COUNT" ColumnName="TRACKER_COUNT" />
+                <ScalarProperty Name="IMPRESSIONS" ColumnName="IMPRESSIONS" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="REFER_URL" ColumnName="REFER_URL" />
+                <ScalarProperty Name="TRACKER_TEXT" ColumnName="TRACKER_TEXT" />
+                <ScalarProperty Name="START_DATE" ColumnName="START_DATE" />
+                <ScalarProperty Name="END_DATE" ColumnName="END_DATE" />
+                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+                <ScalarProperty Name="BUDGET" ColumnName="BUDGET" />
+                <ScalarProperty Name="BUDGET_USDOLLAR" ColumnName="BUDGET_USDOLLAR" />
+                <ScalarProperty Name="EXPECTED_COST" ColumnName="EXPECTED_COST" />
+                <ScalarProperty Name="EXPECTED_COST_USDOLLAR" ColumnName="EXPECTED_COST_USDOLLAR" />
+                <ScalarProperty Name="ACTUAL_COST" ColumnName="ACTUAL_COST" />
+                <ScalarProperty Name="ACTUAL_COST_USDOLLAR" ColumnName="ACTUAL_COST_USDOLLAR" />
+                <ScalarProperty Name="EXPECTED_REVENUE" ColumnName="EXPECTED_REVENUE" />
+                <ScalarProperty Name="EXPECTED_REVENUE_USDOLLAR" ColumnName="EXPECTED_REVENUE_USDOLLAR" />
+                <ScalarProperty Name="CAMPAIGN_TYPE" ColumnName="CAMPAIGN_TYPE" />
+                <ScalarProperty Name="FREQUENCY" ColumnName="FREQUENCY" />
+                <ScalarProperty Name="OBJECTIVE" ColumnName="OBJECTIVE" />
+                <ScalarProperty Name="CONTENT" ColumnName="CONTENT" />
+                <ScalarProperty Name="CURRENCY_ID" ColumnName="CURRENCY_ID" />
+                <ScalarProperty Name="TEAM_SET_ID" ColumnName="TEAM_SET_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CASES">
+            <EntityTypeMapping TypeName="IPACCRMModel.Case">
+              <MappingFragment StoreEntitySet="CASES">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="DELETED" ColumnName="DELETED" />
+                <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+                <ScalarProperty Name="DATE_ENTERED" ColumnName="DATE_ENTERED" />
+                <ScalarProperty Name="MODIFIED_USER_ID" ColumnName="MODIFIED_USER_ID" />
+                <ScalarProperty Name="DATE_MODIFIED" ColumnName="DATE_MODIFIED" />
+                <ScalarProperty Name="DATE_MODIFIED_UTC" ColumnName="DATE_MODIFIED_UTC" />
+                <ScalarProperty Name="ASSIGNED_USER_ID" ColumnName="ASSIGNED_USER_ID" />
+                <ScalarProperty Name="TEAM_ID" ColumnName="TEAM_ID" />
+                <ScalarProperty Name="CASE_NUMBER" ColumnName="CASE_NUMBER" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="ACCOUNT_NAME" ColumnName="ACCOUNT_NAME" />
+                <ScalarProperty Name="ACCOUNT_ID" ColumnName="ACCOUNT_ID" />
+                <ScalarProperty Name="B2C_CONTACT_ID" ColumnName="B2C_CONTACT_ID" />
+                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+                <ScalarProperty Name="PRIORITY" ColumnName="PRIORITY" />
+                <ScalarProperty Name="TYPE" ColumnName="TYPE" />
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                <ScalarProperty Name="RESOLUTION" ColumnName="RESOLUTION" />
+                <ScalarProperty Name="WORK_LOG" ColumnName="WORK_LOG" />
+                <ScalarProperty Name="TEAM_SET_ID" ColumnName="TEAM_SET_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CONTACTS">
+            <EntityTypeMapping TypeName="IPACCRMModel.CONTACT">
+              <MappingFragment StoreEntitySet="CONTACTS">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="DELETED" ColumnName="DELETED" />
+                <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+                <ScalarProperty Name="DATE_ENTERED" ColumnName="DATE_ENTERED" />
+                <ScalarProperty Name="MODIFIED_USER_ID" ColumnName="MODIFIED_USER_ID" />
+                <ScalarProperty Name="DATE_MODIFIED" ColumnName="DATE_MODIFIED" />
+                <ScalarProperty Name="DATE_MODIFIED_UTC" ColumnName="DATE_MODIFIED_UTC" />
+                <ScalarProperty Name="ASSIGNED_USER_ID" ColumnName="ASSIGNED_USER_ID" />
+                <ScalarProperty Name="TEAM_ID" ColumnName="TEAM_ID" />
+                <ScalarProperty Name="SALUTATION" ColumnName="SALUTATION" />
+                <ScalarProperty Name="FIRST_NAME" ColumnName="FIRST_NAME" />
+                <ScalarProperty Name="LAST_NAME" ColumnName="LAST_NAME" />
+                <ScalarProperty Name="LEAD_SOURCE" ColumnName="LEAD_SOURCE" />
+                <ScalarProperty Name="TITLE" ColumnName="TITLE" />
+                <ScalarProperty Name="DEPARTMENT" ColumnName="DEPARTMENT" />
+                <ScalarProperty Name="REPORTS_TO_ID" ColumnName="REPORTS_TO_ID" />
+                <ScalarProperty Name="BIRTHDATE" ColumnName="BIRTHDATE" />
+                <ScalarProperty Name="DO_NOT_CALL" ColumnName="DO_NOT_CALL" />
+                <ScalarProperty Name="PHONE_HOME" ColumnName="PHONE_HOME" />
+                <ScalarProperty Name="PHONE_MOBILE" ColumnName="PHONE_MOBILE" />
+                <ScalarProperty Name="PHONE_WORK" ColumnName="PHONE_WORK" />
+                <ScalarProperty Name="PHONE_OTHER" ColumnName="PHONE_OTHER" />
+                <ScalarProperty Name="PHONE_FAX" ColumnName="PHONE_FAX" />
+                <ScalarProperty Name="EMAIL1" ColumnName="EMAIL1" />
+                <ScalarProperty Name="EMAIL2" ColumnName="EMAIL2" />
+                <ScalarProperty Name="ASSISTANT" ColumnName="ASSISTANT" />
+                <ScalarProperty Name="ASSISTANT_PHONE" ColumnName="ASSISTANT_PHONE" />
+                <ScalarProperty Name="EMAIL_OPT_OUT" ColumnName="EMAIL_OPT_OUT" />
+                <ScalarProperty Name="INVALID_EMAIL" ColumnName="INVALID_EMAIL" />
+                <ScalarProperty Name="SMS_OPT_IN" ColumnName="SMS_OPT_IN" />
+                <ScalarProperty Name="TWITTER_SCREEN_NAME" ColumnName="TWITTER_SCREEN_NAME" />
+                <ScalarProperty Name="PRIMARY_ADDRESS_STREET" ColumnName="PRIMARY_ADDRESS_STREET" />
+                <ScalarProperty Name="PRIMARY_ADDRESS_CITY" ColumnName="PRIMARY_ADDRESS_CITY" />
+                <ScalarProperty Name="PRIMARY_ADDRESS_STATE" ColumnName="PRIMARY_ADDRESS_STATE" />
+                <ScalarProperty Name="PRIMARY_ADDRESS_POSTALCODE" ColumnName="PRIMARY_ADDRESS_POSTALCODE" />
+                <ScalarProperty Name="PRIMARY_ADDRESS_COUNTRY" ColumnName="PRIMARY_ADDRESS_COUNTRY" />
+                <ScalarProperty Name="ALT_ADDRESS_STREET" ColumnName="ALT_ADDRESS_STREET" />
+                <ScalarProperty Name="ALT_ADDRESS_CITY" ColumnName="ALT_ADDRESS_CITY" />
+                <ScalarProperty Name="ALT_ADDRESS_STATE" ColumnName="ALT_ADDRESS_STATE" />
+                <ScalarProperty Name="ALT_ADDRESS_POSTALCODE" ColumnName="ALT_ADDRESS_POSTALCODE" />
+                <ScalarProperty Name="ALT_ADDRESS_COUNTRY" ColumnName="ALT_ADDRESS_COUNTRY" />
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                <ScalarProperty Name="PORTAL_NAME" ColumnName="PORTAL_NAME" />
+                <ScalarProperty Name="PORTAL_PASSWORD" ColumnName="PORTAL_PASSWORD" />
+                <ScalarProperty Name="PORTAL_ACTIVE" ColumnName="PORTAL_ACTIVE" />
+                <ScalarProperty Name="PORTAL_APP" ColumnName="PORTAL_APP" />
+                <ScalarProperty Name="CAMPAIGN_ID" ColumnName="CAMPAIGN_ID" />
+                <ScalarProperty Name="TEAM_SET_ID" ColumnName="TEAM_SET_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DOCUMENTS">
+            <EntityTypeMapping TypeName="IPACCRMModel.DOCUMENT">
+              <MappingFragment StoreEntitySet="DOCUMENTS">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="DELETED" ColumnName="DELETED" />
+                <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+                <ScalarProperty Name="DATE_ENTERED" ColumnName="DATE_ENTERED" />
+                <ScalarProperty Name="MODIFIED_USER_ID" ColumnName="MODIFIED_USER_ID" />
+                <ScalarProperty Name="DATE_MODIFIED" ColumnName="DATE_MODIFIED" />
+                <ScalarProperty Name="DATE_MODIFIED_UTC" ColumnName="DATE_MODIFIED_UTC" />
+                <ScalarProperty Name="ASSIGNED_USER_ID" ColumnName="ASSIGNED_USER_ID" />
+                <ScalarProperty Name="TEAM_ID" ColumnName="TEAM_ID" />
+                <ScalarProperty Name="DOCUMENT_NAME" ColumnName="DOCUMENT_NAME" />
+                <ScalarProperty Name="ACTIVE_DATE" ColumnName="ACTIVE_DATE" />
+                <ScalarProperty Name="EXP_DATE" ColumnName="EXP_DATE" />
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                <ScalarProperty Name="CATEGORY_ID" ColumnName="CATEGORY_ID" />
+                <ScalarProperty Name="SUBCATEGORY_ID" ColumnName="SUBCATEGORY_ID" />
+                <ScalarProperty Name="STATUS_ID" ColumnName="STATUS_ID" />
+                <ScalarProperty Name="DOCUMENT_REVISION_ID" ColumnName="DOCUMENT_REVISION_ID" />
+                <ScalarProperty Name="MAIL_MERGE_DOCUMENT" ColumnName="MAIL_MERGE_DOCUMENT" />
+                <ScalarProperty Name="RELATED_DOC_ID" ColumnName="RELATED_DOC_ID" />
+                <ScalarProperty Name="RELATED_DOC_REV_ID" ColumnName="RELATED_DOC_REV_ID" />
+                <ScalarProperty Name="IS_TEMPLATE" ColumnName="IS_TEMPLATE" />
+                <ScalarProperty Name="TEMPLATE_TYPE" ColumnName="TEMPLATE_TYPE" />
+                <ScalarProperty Name="PRIMARY_MODULE" ColumnName="PRIMARY_MODULE" />
+                <ScalarProperty Name="SECONDARY_MODULE" ColumnName="SECONDARY_MODULE" />
+                <ScalarProperty Name="TEAM_SET_ID" ColumnName="TEAM_SET_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EMAIL_TEMPLATES">
+            <EntityTypeMapping TypeName="IPACCRMModel.EMAIL_TEMPLATES">
+              <MappingFragment StoreEntitySet="EMAIL_TEMPLATES">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="DELETED" ColumnName="DELETED" />
+                <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+                <ScalarProperty Name="DATE_ENTERED" ColumnName="DATE_ENTERED" />
+                <ScalarProperty Name="MODIFIED_USER_ID" ColumnName="MODIFIED_USER_ID" />
+                <ScalarProperty Name="DATE_MODIFIED" ColumnName="DATE_MODIFIED" />
+                <ScalarProperty Name="DATE_MODIFIED_UTC" ColumnName="DATE_MODIFIED_UTC" />
+                <ScalarProperty Name="ASSIGNED_USER_ID" ColumnName="ASSIGNED_USER_ID" />
+                <ScalarProperty Name="TEAM_ID" ColumnName="TEAM_ID" />
+                <ScalarProperty Name="PUBLISHED" ColumnName="PUBLISHED" />
+                <ScalarProperty Name="READ_ONLY" ColumnName="READ_ONLY" />
+                <ScalarProperty Name="TEXT_ONLY" ColumnName="TEXT_ONLY" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                <ScalarProperty Name="SUBJECT" ColumnName="SUBJECT" />
+                <ScalarProperty Name="BODY" ColumnName="BODY" />
+                <ScalarProperty Name="BODY_HTML" ColumnName="BODY_HTML" />
+                <ScalarProperty Name="TEAM_SET_ID" ColumnName="TEAM_SET_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EMAILS">
+            <EntityTypeMapping TypeName="IPACCRMModel.EMAIL">
+              <MappingFragment StoreEntitySet="EMAILS">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="DELETED" ColumnName="DELETED" />
+                <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+                <ScalarProperty Name="DATE_ENTERED" ColumnName="DATE_ENTERED" />
+                <ScalarProperty Name="MODIFIED_USER_ID" ColumnName="MODIFIED_USER_ID" />
+                <ScalarProperty Name="DATE_MODIFIED" ColumnName="DATE_MODIFIED" />
+                <ScalarProperty Name="DATE_MODIFIED_UTC" ColumnName="DATE_MODIFIED_UTC" />
+                <ScalarProperty Name="ASSIGNED_USER_ID" ColumnName="ASSIGNED_USER_ID" />
+                <ScalarProperty Name="TEAM_ID" ColumnName="TEAM_ID" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="DATE_START" ColumnName="DATE_START" />
+                <ScalarProperty Name="TIME_START" ColumnName="TIME_START" />
+                <ScalarProperty Name="PARENT_TYPE" ColumnName="PARENT_TYPE" />
+                <ScalarProperty Name="PARENT_ID" ColumnName="PARENT_ID" />
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                <ScalarProperty Name="DESCRIPTION_HTML" ColumnName="DESCRIPTION_HTML" />
+                <ScalarProperty Name="FROM_ADDR" ColumnName="FROM_ADDR" />
+                <ScalarProperty Name="FROM_NAME" ColumnName="FROM_NAME" />
+                <ScalarProperty Name="TO_ADDRS" ColumnName="TO_ADDRS" />
+                <ScalarProperty Name="CC_ADDRS" ColumnName="CC_ADDRS" />
+                <ScalarProperty Name="BCC_ADDRS" ColumnName="BCC_ADDRS" />
+                <ScalarProperty Name="TO_ADDRS_IDS" ColumnName="TO_ADDRS_IDS" />
+                <ScalarProperty Name="TO_ADDRS_NAMES" ColumnName="TO_ADDRS_NAMES" />
+                <ScalarProperty Name="TO_ADDRS_EMAILS" ColumnName="TO_ADDRS_EMAILS" />
+                <ScalarProperty Name="CC_ADDRS_IDS" ColumnName="CC_ADDRS_IDS" />
+                <ScalarProperty Name="CC_ADDRS_NAMES" ColumnName="CC_ADDRS_NAMES" />
+                <ScalarProperty Name="CC_ADDRS_EMAILS" ColumnName="CC_ADDRS_EMAILS" />
+                <ScalarProperty Name="BCC_ADDRS_IDS" ColumnName="BCC_ADDRS_IDS" />
+                <ScalarProperty Name="BCC_ADDRS_NAMES" ColumnName="BCC_ADDRS_NAMES" />
+                <ScalarProperty Name="BCC_ADDRS_EMAILS" ColumnName="BCC_ADDRS_EMAILS" />
+                <ScalarProperty Name="TYPE" ColumnName="TYPE" />
+                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+                <ScalarProperty Name="MESSAGE_ID" ColumnName="MESSAGE_ID" />
+                <ScalarProperty Name="REPLY_TO_NAME" ColumnName="REPLY_TO_NAME" />
+                <ScalarProperty Name="REPLY_TO_ADDR" ColumnName="REPLY_TO_ADDR" />
+                <ScalarProperty Name="INTENT" ColumnName="INTENT" />
+                <ScalarProperty Name="MAILBOX_ID" ColumnName="MAILBOX_ID" />
+                <ScalarProperty Name="RAW_SOURCE" ColumnName="RAW_SOURCE" />
+                <ScalarProperty Name="TEAM_SET_ID" ColumnName="TEAM_SET_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LEADS">
+            <EntityTypeMapping TypeName="IPACCRMModel.LEAD">
+              <MappingFragment StoreEntitySet="LEADS">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="DELETED" ColumnName="DELETED" />
+                <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+                <ScalarProperty Name="DATE_ENTERED" ColumnName="DATE_ENTERED" />
+                <ScalarProperty Name="MODIFIED_USER_ID" ColumnName="MODIFIED_USER_ID" />
+                <ScalarProperty Name="DATE_MODIFIED" ColumnName="DATE_MODIFIED" />
+                <ScalarProperty Name="DATE_MODIFIED_UTC" ColumnName="DATE_MODIFIED_UTC" />
+                <ScalarProperty Name="ASSIGNED_USER_ID" ColumnName="ASSIGNED_USER_ID" />
+                <ScalarProperty Name="TEAM_ID" ColumnName="TEAM_ID" />
+                <ScalarProperty Name="CONVERTED" ColumnName="CONVERTED" />
+                <ScalarProperty Name="SALUTATION" ColumnName="SALUTATION" />
+                <ScalarProperty Name="FIRST_NAME" ColumnName="FIRST_NAME" />
+                <ScalarProperty Name="LAST_NAME" ColumnName="LAST_NAME" />
+                <ScalarProperty Name="TITLE" ColumnName="TITLE" />
+                <ScalarProperty Name="REFERED_BY" ColumnName="REFERED_BY" />
+                <ScalarProperty Name="LEAD_SOURCE" ColumnName="LEAD_SOURCE" />
+                <ScalarProperty Name="LEAD_SOURCE_DESCRIPTION" ColumnName="LEAD_SOURCE_DESCRIPTION" />
+                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+                <ScalarProperty Name="STATUS_DESCRIPTION" ColumnName="STATUS_DESCRIPTION" />
+                <ScalarProperty Name="DEPARTMENT" ColumnName="DEPARTMENT" />
+                <ScalarProperty Name="REPORTS_TO_ID" ColumnName="REPORTS_TO_ID" />
+                <ScalarProperty Name="BIRTHDATE" ColumnName="BIRTHDATE" />
+                <ScalarProperty Name="DO_NOT_CALL" ColumnName="DO_NOT_CALL" />
+                <ScalarProperty Name="PHONE_HOME" ColumnName="PHONE_HOME" />
+                <ScalarProperty Name="PHONE_MOBILE" ColumnName="PHONE_MOBILE" />
+                <ScalarProperty Name="PHONE_WORK" ColumnName="PHONE_WORK" />
+                <ScalarProperty Name="PHONE_OTHER" ColumnName="PHONE_OTHER" />
+                <ScalarProperty Name="PHONE_FAX" ColumnName="PHONE_FAX" />
+                <ScalarProperty Name="EMAIL1" ColumnName="EMAIL1" />
+                <ScalarProperty Name="EMAIL2" ColumnName="EMAIL2" />
+                <ScalarProperty Name="ASSISTANT" ColumnName="ASSISTANT" />
+                <ScalarProperty Name="ASSISTANT_PHONE" ColumnName="ASSISTANT_PHONE" />
+                <ScalarProperty Name="WEBSITE" ColumnName="WEBSITE" />
+                <ScalarProperty Name="EMAIL_OPT_OUT" ColumnName="EMAIL_OPT_OUT" />
+                <ScalarProperty Name="INVALID_EMAIL" ColumnName="INVALID_EMAIL" />
+                <ScalarProperty Name="SMS_OPT_IN" ColumnName="SMS_OPT_IN" />
+                <ScalarProperty Name="TWITTER_SCREEN_NAME" ColumnName="TWITTER_SCREEN_NAME" />
+                <ScalarProperty Name="PRIMARY_ADDRESS_STREET" ColumnName="PRIMARY_ADDRESS_STREET" />
+                <ScalarProperty Name="PRIMARY_ADDRESS_CITY" ColumnName="PRIMARY_ADDRESS_CITY" />
+                <ScalarProperty Name="PRIMARY_ADDRESS_STATE" ColumnName="PRIMARY_ADDRESS_STATE" />
+                <ScalarProperty Name="PRIMARY_ADDRESS_POSTALCODE" ColumnName="PRIMARY_ADDRESS_POSTALCODE" />
+                <ScalarProperty Name="PRIMARY_ADDRESS_COUNTRY" ColumnName="PRIMARY_ADDRESS_COUNTRY" />
+                <ScalarProperty Name="ALT_ADDRESS_STREET" ColumnName="ALT_ADDRESS_STREET" />
+                <ScalarProperty Name="ALT_ADDRESS_CITY" ColumnName="ALT_ADDRESS_CITY" />
+                <ScalarProperty Name="ALT_ADDRESS_STATE" ColumnName="ALT_ADDRESS_STATE" />
+                <ScalarProperty Name="ALT_ADDRESS_POSTALCODE" ColumnName="ALT_ADDRESS_POSTALCODE" />
+                <ScalarProperty Name="ALT_ADDRESS_COUNTRY" ColumnName="ALT_ADDRESS_COUNTRY" />
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                <ScalarProperty Name="ACCOUNT_NAME" ColumnName="ACCOUNT_NAME" />
+                <ScalarProperty Name="ACCOUNT_DESCRIPTION" ColumnName="ACCOUNT_DESCRIPTION" />
+                <ScalarProperty Name="CONTACT_ID" ColumnName="CONTACT_ID" />
+                <ScalarProperty Name="ACCOUNT_ID" ColumnName="ACCOUNT_ID" />
+                <ScalarProperty Name="OPPORTUNITY_ID" ColumnName="OPPORTUNITY_ID" />
+                <ScalarProperty Name="OPPORTUNITY_NAME" ColumnName="OPPORTUNITY_NAME" />
+                <ScalarProperty Name="OPPORTUNITY_AMOUNT" ColumnName="OPPORTUNITY_AMOUNT" />
+                <ScalarProperty Name="PORTAL_NAME" ColumnName="PORTAL_NAME" />
+                <ScalarProperty Name="PORTAL_APP" ColumnName="PORTAL_APP" />
+                <ScalarProperty Name="CAMPAIGN_ID" ColumnName="CAMPAIGN_ID" />
+                <ScalarProperty Name="TEAM_SET_ID" ColumnName="TEAM_SET_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MEETINGS">
+            <EntityTypeMapping TypeName="IPACCRMModel.MEETING">
+              <MappingFragment StoreEntitySet="MEETINGS">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="DELETED" ColumnName="DELETED" />
+                <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+                <ScalarProperty Name="DATE_ENTERED" ColumnName="DATE_ENTERED" />
+                <ScalarProperty Name="MODIFIED_USER_ID" ColumnName="MODIFIED_USER_ID" />
+                <ScalarProperty Name="DATE_MODIFIED" ColumnName="DATE_MODIFIED" />
+                <ScalarProperty Name="DATE_MODIFIED_UTC" ColumnName="DATE_MODIFIED_UTC" />
+                <ScalarProperty Name="ASSIGNED_USER_ID" ColumnName="ASSIGNED_USER_ID" />
+                <ScalarProperty Name="TEAM_ID" ColumnName="TEAM_ID" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="LOCATION" ColumnName="LOCATION" />
+                <ScalarProperty Name="DURATION_HOURS" ColumnName="DURATION_HOURS" />
+                <ScalarProperty Name="DURATION_MINUTES" ColumnName="DURATION_MINUTES" />
+                <ScalarProperty Name="DATE_START" ColumnName="DATE_START" />
+                <ScalarProperty Name="TIME_START" ColumnName="TIME_START" />
+                <ScalarProperty Name="DATE_END" ColumnName="DATE_END" />
+                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+                <ScalarProperty Name="PARENT_TYPE" ColumnName="PARENT_TYPE" />
+                <ScalarProperty Name="PARENT_ID" ColumnName="PARENT_ID" />
+                <ScalarProperty Name="REMINDER_TIME" ColumnName="REMINDER_TIME" />
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                <ScalarProperty Name="OUTLOOK_ID" ColumnName="OUTLOOK_ID" />
+                <ScalarProperty Name="TEAM_SET_ID" ColumnName="TEAM_SET_ID" />
+                <ScalarProperty Name="EMAIL_REMINDER_TIME" ColumnName="EMAIL_REMINDER_TIME" />
+                <ScalarProperty Name="SMS_REMINDER_TIME" ColumnName="SMS_REMINDER_TIME" />
+                <ScalarProperty Name="REPEAT_TYPE" ColumnName="REPEAT_TYPE" />
+                <ScalarProperty Name="REPEAT_INTERVAL" ColumnName="REPEAT_INTERVAL" />
+                <ScalarProperty Name="REPEAT_DOW" ColumnName="REPEAT_DOW" />
+                <ScalarProperty Name="REPEAT_UNTIL" ColumnName="REPEAT_UNTIL" />
+                <ScalarProperty Name="REPEAT_COUNT" ColumnName="REPEAT_COUNT" />
+                <ScalarProperty Name="REPEAT_PARENT_ID" ColumnName="REPEAT_PARENT_ID" />
+                <ScalarProperty Name="RECURRING_SOURCE" ColumnName="RECURRING_SOURCE" />
+                <ScalarProperty Name="ALL_DAY_EVENT" ColumnName="ALL_DAY_EVENT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NOTES">
+            <EntityTypeMapping TypeName="IPACCRMModel.NOTE">
+              <MappingFragment StoreEntitySet="NOTES">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="DELETED" ColumnName="DELETED" />
+                <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+                <ScalarProperty Name="DATE_ENTERED" ColumnName="DATE_ENTERED" />
+                <ScalarProperty Name="MODIFIED_USER_ID" ColumnName="MODIFIED_USER_ID" />
+                <ScalarProperty Name="DATE_MODIFIED" ColumnName="DATE_MODIFIED" />
+                <ScalarProperty Name="DATE_MODIFIED_UTC" ColumnName="DATE_MODIFIED_UTC" />
+                <ScalarProperty Name="ASSIGNED_USER_ID" ColumnName="ASSIGNED_USER_ID" />
+                <ScalarProperty Name="TEAM_ID" ColumnName="TEAM_ID" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="FILENAME" ColumnName="FILENAME" />
+                <ScalarProperty Name="FILE_MIME_TYPE" ColumnName="FILE_MIME_TYPE" />
+                <ScalarProperty Name="PARENT_TYPE" ColumnName="PARENT_TYPE" />
+                <ScalarProperty Name="PARENT_ID" ColumnName="PARENT_ID" />
+                <ScalarProperty Name="CONTACT_ID" ColumnName="CONTACT_ID" />
+                <ScalarProperty Name="PORTAL_FLAG" ColumnName="PORTAL_FLAG" />
+                <ScalarProperty Name="EMBED_FLAG" ColumnName="EMBED_FLAG" />
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                <ScalarProperty Name="NOTE_ATTACHMENT_ID" ColumnName="NOTE_ATTACHMENT_ID" />
+                <ScalarProperty Name="TEAM_SET_ID" ColumnName="TEAM_SET_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PROJECTs">
+            <EntityTypeMapping TypeName="IPACCRMModel.PROJECT">
+              <MappingFragment StoreEntitySet="PROJECT">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="DELETED" ColumnName="DELETED" />
+                <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+                <ScalarProperty Name="DATE_ENTERED" ColumnName="DATE_ENTERED" />
+                <ScalarProperty Name="MODIFIED_USER_ID" ColumnName="MODIFIED_USER_ID" />
+                <ScalarProperty Name="DATE_MODIFIED" ColumnName="DATE_MODIFIED" />
+                <ScalarProperty Name="DATE_MODIFIED_UTC" ColumnName="DATE_MODIFIED_UTC" />
+                <ScalarProperty Name="ASSIGNED_USER_ID" ColumnName="ASSIGNED_USER_ID" />
+                <ScalarProperty Name="TEAM_ID" ColumnName="TEAM_ID" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="ESTIMATED_START_DATE" ColumnName="ESTIMATED_START_DATE" />
+                <ScalarProperty Name="ESTIMATED_END_DATE" ColumnName="ESTIMATED_END_DATE" />
+                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+                <ScalarProperty Name="PRIORITY" ColumnName="PRIORITY" />
+                <ScalarProperty Name="IS_TEMPLATE" ColumnName="IS_TEMPLATE" />
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                <ScalarProperty Name="TEAM_SET_ID" ColumnName="TEAM_SET_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TASKS">
+            <EntityTypeMapping TypeName="IPACCRMModel.TASK">
+              <MappingFragment StoreEntitySet="TASKS">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="DELETED" ColumnName="DELETED" />
+                <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+                <ScalarProperty Name="DATE_ENTERED" ColumnName="DATE_ENTERED" />
+                <ScalarProperty Name="MODIFIED_USER_ID" ColumnName="MODIFIED_USER_ID" />
+                <ScalarProperty Name="DATE_MODIFIED" ColumnName="DATE_MODIFIED" />
+                <ScalarProperty Name="DATE_MODIFIED_UTC" ColumnName="DATE_MODIFIED_UTC" />
+                <ScalarProperty Name="ASSIGNED_USER_ID" ColumnName="ASSIGNED_USER_ID" />
+                <ScalarProperty Name="TEAM_ID" ColumnName="TEAM_ID" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+                <ScalarProperty Name="DATE_DUE_FLAG" ColumnName="DATE_DUE_FLAG" />
+                <ScalarProperty Name="DATE_DUE" ColumnName="DATE_DUE" />
+                <ScalarProperty Name="TIME_DUE" ColumnName="TIME_DUE" />
+                <ScalarProperty Name="DATE_START_FLAG" ColumnName="DATE_START_FLAG" />
+                <ScalarProperty Name="DATE_START" ColumnName="DATE_START" />
+                <ScalarProperty Name="TIME_START" ColumnName="TIME_START" />
+                <ScalarProperty Name="PARENT_TYPE" ColumnName="PARENT_TYPE" />
+                <ScalarProperty Name="PARENT_ID" ColumnName="PARENT_ID" />
+                <ScalarProperty Name="CONTACT_ID" ColumnName="CONTACT_ID" />
+                <ScalarProperty Name="PRIORITY" ColumnName="PRIORITY" />
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                <ScalarProperty Name="TEAM_SET_ID" ColumnName="TEAM_SET_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TEAMS">
+            <EntityTypeMapping TypeName="IPACCRMModel.TEAM">
+              <MappingFragment StoreEntitySet="TEAMS">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="DELETED" ColumnName="DELETED" />
+                <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+                <ScalarProperty Name="DATE_ENTERED" ColumnName="DATE_ENTERED" />
+                <ScalarProperty Name="MODIFIED_USER_ID" ColumnName="MODIFIED_USER_ID" />
+                <ScalarProperty Name="DATE_MODIFIED" ColumnName="DATE_MODIFIED" />
+                <ScalarProperty Name="DATE_MODIFIED_UTC" ColumnName="DATE_MODIFIED_UTC" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                <ScalarProperty Name="PRIVATE" ColumnName="PRIVATE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Test_Table">
+            <EntityTypeMapping TypeName="IPACCRMModel.Test_Table">
+              <MappingFragment StoreEntitySet="Test_Table">
+                <ScalarProperty Name="SLID" ColumnName="SLID" />
+                <ScalarProperty Name="Year" ColumnName="Year" />
+                <ScalarProperty Name="Elec" ColumnName="Elec" />
+                <ScalarProperty Name="Book" ColumnName="Book" />
+                <ScalarProperty Name="Home" ColumnName="Home" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="USERS">
+            <EntityTypeMapping TypeName="IPACCRMModel.USER">
+              <MappingFragment StoreEntitySet="USERS">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="DELETED" ColumnName="DELETED" />
+                <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+                <ScalarProperty Name="DATE_ENTERED" ColumnName="DATE_ENTERED" />
+                <ScalarProperty Name="MODIFIED_USER_ID" ColumnName="MODIFIED_USER_ID" />
+                <ScalarProperty Name="DATE_MODIFIED" ColumnName="DATE_MODIFIED" />
+                <ScalarProperty Name="DATE_MODIFIED_UTC" ColumnName="DATE_MODIFIED_UTC" />
+                <ScalarProperty Name="USER_NAME" ColumnName="USER_NAME" />
+                <ScalarProperty Name="USER_PASSWORD" ColumnName="USER_PASSWORD" />
+                <ScalarProperty Name="USER_HASH" ColumnName="USER_HASH" />
+                <ScalarProperty Name="FIRST_NAME" ColumnName="FIRST_NAME" />
+                <ScalarProperty Name="LAST_NAME" ColumnName="LAST_NAME" />
+                <ScalarProperty Name="REPORTS_TO_ID" ColumnName="REPORTS_TO_ID" />
+                <ScalarProperty Name="IS_ADMIN" ColumnName="IS_ADMIN" />
+                <ScalarProperty Name="IS_ADMIN_DELEGATE" ColumnName="IS_ADMIN_DELEGATE" />
+                <ScalarProperty Name="RECEIVE_NOTIFICATIONS" ColumnName="RECEIVE_NOTIFICATIONS" />
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                <ScalarProperty Name="TITLE" ColumnName="TITLE" />
+                <ScalarProperty Name="DEPARTMENT" ColumnName="DEPARTMENT" />
+                <ScalarProperty Name="PHONE_HOME" ColumnName="PHONE_HOME" />
+                <ScalarProperty Name="PHONE_MOBILE" ColumnName="PHONE_MOBILE" />
+                <ScalarProperty Name="PHONE_WORK" ColumnName="PHONE_WORK" />
+                <ScalarProperty Name="PHONE_OTHER" ColumnName="PHONE_OTHER" />
+                <ScalarProperty Name="PHONE_FAX" ColumnName="PHONE_FAX" />
+                <ScalarProperty Name="EMAIL1" ColumnName="EMAIL1" />
+                <ScalarProperty Name="EMAIL2" ColumnName="EMAIL2" />
+                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+                <ScalarProperty Name="ADDRESS_STREET" ColumnName="ADDRESS_STREET" />
+                <ScalarProperty Name="ADDRESS_CITY" ColumnName="ADDRESS_CITY" />
+                <ScalarProperty Name="ADDRESS_STATE" ColumnName="ADDRESS_STATE" />
+                <ScalarProperty Name="ADDRESS_COUNTRY" ColumnName="ADDRESS_COUNTRY" />
+                <ScalarProperty Name="ADDRESS_POSTALCODE" ColumnName="ADDRESS_POSTALCODE" />
+                <ScalarProperty Name="USER_PREFERENCES" ColumnName="USER_PREFERENCES" />
+                <ScalarProperty Name="PORTAL_ONLY" ColumnName="PORTAL_ONLY" />
+                <ScalarProperty Name="EMPLOYEE_STATUS" ColumnName="EMPLOYEE_STATUS" />
+                <ScalarProperty Name="MESSENGER_ID" ColumnName="MESSENGER_ID" />
+                <ScalarProperty Name="MESSENGER_TYPE" ColumnName="MESSENGER_TYPE" />
+                <ScalarProperty Name="IS_GROUP" ColumnName="IS_GROUP" />
+                <ScalarProperty Name="DEFAULT_TEAM" ColumnName="DEFAULT_TEAM" />
+                <ScalarProperty Name="SYSTEM_GENERATED_PASSWORD" ColumnName="SYSTEM_GENERATED_PASSWORD" />
+                <ScalarProperty Name="PWD_LAST_CHANGED" ColumnName="PWD_LAST_CHANGED" />
+                <ScalarProperty Name="MAIL_SMTPUSER" ColumnName="MAIL_SMTPUSER" />
+                <ScalarProperty Name="MAIL_SMTPPASS" ColumnName="MAIL_SMTPPASS" />
+                <ScalarProperty Name="GOOGLEAPPS_SYNC_CONTACTS" ColumnName="GOOGLEAPPS_SYNC_CONTACTS" />
+                <ScalarProperty Name="GOOGLEAPPS_SYNC_CALENDAR" ColumnName="GOOGLEAPPS_SYNC_CALENDAR" />
+                <ScalarProperty Name="GOOGLEAPPS_USERNAME" ColumnName="GOOGLEAPPS_USERNAME" />
+                <ScalarProperty Name="GOOGLEAPPS_PASSWORD" ColumnName="GOOGLEAPPS_PASSWORD" />
+                <ScalarProperty Name="FACEBOOK_ID" ColumnName="FACEBOOK_ID" />
+                <ScalarProperty Name="ICLOUD_SYNC_CONTACTS" ColumnName="ICLOUD_SYNC_CONTACTS" />
+                <ScalarProperty Name="ICLOUD_SYNC_CALENDAR" ColumnName="ICLOUD_SYNC_CALENDAR" />
+                <ScalarProperty Name="ICLOUD_USERNAME" ColumnName="ICLOUD_USERNAME" />
+                <ScalarProperty Name="ICLOUD_PASSWORD" ColumnName="ICLOUD_PASSWORD" />
+                <ScalarProperty Name="ICLOUD_CTAG_CONTACTS" ColumnName="ICLOUD_CTAG_CONTACTS" />
+                <ScalarProperty Name="ICLOUD_CTAG_CALENDAR" ColumnName="ICLOUD_CTAG_CALENDAR" />
+                <ScalarProperty Name="THEME" ColumnName="THEME" />
+                <ScalarProperty Name="DATE_FORMAT" ColumnName="DATE_FORMAT" />
+                <ScalarProperty Name="TIME_FORMAT" ColumnName="TIME_FORMAT" />
+                <ScalarProperty Name="LANG" ColumnName="LANG" />
+                <ScalarProperty Name="CURRENCY_ID" ColumnName="CURRENCY_ID" />
+                <ScalarProperty Name="TIMEZONE_ID" ColumnName="TIMEZONE_ID" />
+                <ScalarProperty Name="SAVE_QUERY" ColumnName="SAVE_QUERY" />
+                <ScalarProperty Name="GROUP_TABS" ColumnName="GROUP_TABS" />
+                <ScalarProperty Name="SUBPANEL_TABS" ColumnName="SUBPANEL_TABS" />
+                <ScalarProperty Name="EXTENSION" ColumnName="EXTENSION" />
+                <ScalarProperty Name="SMS_OPT_IN" ColumnName="SMS_OPT_IN" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

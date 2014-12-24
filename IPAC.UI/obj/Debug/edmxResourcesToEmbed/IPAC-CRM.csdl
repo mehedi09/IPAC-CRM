@@ -1,0 +1,564 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="IPACCRMModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="ACCOUNT">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Guid" Nullable="false" />
+    <Property Name="DELETED" Type="Boolean" Nullable="false" />
+    <Property Name="CREATED_BY" Type="Guid" />
+    <Property Name="DATE_ENTERED" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="MODIFIED_USER_ID" Type="Guid" />
+    <Property Name="DATE_MODIFIED" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DATE_MODIFIED_UTC" Type="DateTime" Precision="3" />
+    <Property Name="ASSIGNED_USER_ID" Type="Guid" />
+    <Property Name="TEAM_ID" Type="Guid" />
+    <Property Name="ACCOUNT_NUMBER" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="NAME" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="ACCOUNT_TYPE" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="PARENT_ID" Type="Guid" />
+    <Property Name="INDUSTRY" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="ANNUAL_REVENUE" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="PHONE_FAX" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="BILLING_ADDRESS_STREET" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="BILLING_ADDRESS_CITY" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="BILLING_ADDRESS_STATE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="BILLING_ADDRESS_POSTALCODE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="BILLING_ADDRESS_COUNTRY" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="DESCRIPTION" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="RATING" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="PHONE_OFFICE" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="PHONE_ALTERNATE" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="EMAIL1" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="EMAIL2" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="WEBSITE" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="OWNERSHIP" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="EMPLOYEES" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="TICKER_SYMBOL" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="SIC_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="SHIPPING_ADDRESS_STREET" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="SHIPPING_ADDRESS_CITY" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="SHIPPING_ADDRESS_STATE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="SHIPPING_ADDRESS_POSTALCODE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="SHIPPING_ADDRESS_COUNTRY" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CAMPAIGN_ID" Type="Guid" />
+    <Property Name="TEAM_SET_ID" Type="Guid" />
+  </EntityType>
+  <EntityType Name="ACL_ROLES">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Guid" Nullable="false" />
+    <Property Name="DELETED" Type="Boolean" Nullable="false" />
+    <Property Name="CREATED_BY" Type="Guid" />
+    <Property Name="DATE_ENTERED" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="MODIFIED_USER_ID" Type="Guid" />
+    <Property Name="DATE_MODIFIED" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DATE_MODIFIED_UTC" Type="DateTime" Precision="3" />
+    <Property Name="NAME" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="DESCRIPTION" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="CAMPAIGN">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Guid" Nullable="false" />
+    <Property Name="DELETED" Type="Boolean" Nullable="false" />
+    <Property Name="CREATED_BY" Type="Guid" />
+    <Property Name="DATE_ENTERED" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="MODIFIED_USER_ID" Type="Guid" />
+    <Property Name="DATE_MODIFIED" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DATE_MODIFIED_UTC" Type="DateTime" Precision="3" />
+    <Property Name="ASSIGNED_USER_ID" Type="Guid" />
+    <Property Name="TEAM_ID" Type="Guid" />
+    <Property Name="TRACKER_KEY" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="TRACKER_COUNT" Type="Int32" />
+    <Property Name="IMPRESSIONS" Type="Int32" />
+    <Property Name="NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="REFER_URL" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="TRACKER_TEXT" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="START_DATE" Type="DateTime" Precision="3" />
+    <Property Name="END_DATE" Type="DateTime" Precision="3" />
+    <Property Name="STATUS" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="BUDGET" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="BUDGET_USDOLLAR" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="EXPECTED_COST" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="EXPECTED_COST_USDOLLAR" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="ACTUAL_COST" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="ACTUAL_COST_USDOLLAR" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="EXPECTED_REVENUE" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="EXPECTED_REVENUE_USDOLLAR" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CAMPAIGN_TYPE" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="FREQUENCY" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="OBJECTIVE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CONTENT" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CURRENCY_ID" Type="Guid" />
+    <Property Name="TEAM_SET_ID" Type="Guid" />
+  </EntityType>
+  <EntityType Name="Case">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Guid" Nullable="false" />
+    <Property Name="DELETED" Type="Boolean" Nullable="false" />
+    <Property Name="CREATED_BY" Type="Guid" />
+    <Property Name="DATE_ENTERED" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="MODIFIED_USER_ID" Type="Guid" />
+    <Property Name="DATE_MODIFIED" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DATE_MODIFIED_UTC" Type="DateTime" Precision="3" />
+    <Property Name="ASSIGNED_USER_ID" Type="Guid" />
+    <Property Name="TEAM_ID" Type="Guid" />
+    <Property Name="CASE_NUMBER" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="NAME" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ACCOUNT_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ACCOUNT_ID" Type="Guid" />
+    <Property Name="B2C_CONTACT_ID" Type="Guid" />
+    <Property Name="STATUS" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="PRIORITY" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="TYPE" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="DESCRIPTION" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="RESOLUTION" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="WORK_LOG" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="TEAM_SET_ID" Type="Guid" />
+  </EntityType>
+  <EntityType Name="CONTACT">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Guid" Nullable="false" />
+    <Property Name="DELETED" Type="Boolean" Nullable="false" />
+    <Property Name="CREATED_BY" Type="Guid" />
+    <Property Name="DATE_ENTERED" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="MODIFIED_USER_ID" Type="Guid" />
+    <Property Name="DATE_MODIFIED" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DATE_MODIFIED_UTC" Type="DateTime" Precision="3" />
+    <Property Name="ASSIGNED_USER_ID" Type="Guid" />
+    <Property Name="TEAM_ID" Type="Guid" />
+    <Property Name="SALUTATION" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="FIRST_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="LAST_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="LEAD_SOURCE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="TITLE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DEPARTMENT" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="REPORTS_TO_ID" Type="Guid" />
+    <Property Name="BIRTHDATE" Type="DateTime" Precision="3" />
+    <Property Name="DO_NOT_CALL" Type="Boolean" />
+    <Property Name="PHONE_HOME" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="PHONE_MOBILE" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="PHONE_WORK" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="PHONE_OTHER" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="PHONE_FAX" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="EMAIL1" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="EMAIL2" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ASSISTANT" Type="String" MaxLength="75" FixedLength="false" Unicode="true" />
+    <Property Name="ASSISTANT_PHONE" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="EMAIL_OPT_OUT" Type="Boolean" />
+    <Property Name="INVALID_EMAIL" Type="Boolean" />
+    <Property Name="SMS_OPT_IN" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="TWITTER_SCREEN_NAME" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="PRIMARY_ADDRESS_STREET" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="PRIMARY_ADDRESS_CITY" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="PRIMARY_ADDRESS_STATE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="PRIMARY_ADDRESS_POSTALCODE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="PRIMARY_ADDRESS_COUNTRY" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ALT_ADDRESS_STREET" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="ALT_ADDRESS_CITY" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ALT_ADDRESS_STATE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ALT_ADDRESS_POSTALCODE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="ALT_ADDRESS_COUNTRY" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="DESCRIPTION" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PORTAL_NAME" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="PORTAL_PASSWORD" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+    <Property Name="PORTAL_ACTIVE" Type="Boolean" />
+    <Property Name="PORTAL_APP" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="CAMPAIGN_ID" Type="Guid" />
+    <Property Name="TEAM_SET_ID" Type="Guid" />
+  </EntityType>
+  <EntityType Name="DOCUMENT">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Guid" Nullable="false" />
+    <Property Name="DELETED" Type="Boolean" Nullable="false" />
+    <Property Name="CREATED_BY" Type="Guid" />
+    <Property Name="DATE_ENTERED" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="MODIFIED_USER_ID" Type="Guid" />
+    <Property Name="DATE_MODIFIED" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DATE_MODIFIED_UTC" Type="DateTime" Precision="3" />
+    <Property Name="ASSIGNED_USER_ID" Type="Guid" />
+    <Property Name="TEAM_ID" Type="Guid" />
+    <Property Name="DOCUMENT_NAME" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ACTIVE_DATE" Type="DateTime" Precision="3" />
+    <Property Name="EXP_DATE" Type="DateTime" Precision="3" />
+    <Property Name="DESCRIPTION" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CATEGORY_ID" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="SUBCATEGORY_ID" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="STATUS_ID" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="DOCUMENT_REVISION_ID" Type="Guid" />
+    <Property Name="MAIL_MERGE_DOCUMENT" Type="Boolean" />
+    <Property Name="RELATED_DOC_ID" Type="Guid" />
+    <Property Name="RELATED_DOC_REV_ID" Type="Guid" />
+    <Property Name="IS_TEMPLATE" Type="Boolean" />
+    <Property Name="TEMPLATE_TYPE" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="PRIMARY_MODULE" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="SECONDARY_MODULE" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="TEAM_SET_ID" Type="Guid" />
+  </EntityType>
+  <EntityType Name="EMAIL_TEMPLATES">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Guid" Nullable="false" />
+    <Property Name="DELETED" Type="Boolean" Nullable="false" />
+    <Property Name="CREATED_BY" Type="Guid" />
+    <Property Name="DATE_ENTERED" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="MODIFIED_USER_ID" Type="Guid" />
+    <Property Name="DATE_MODIFIED" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DATE_MODIFIED_UTC" Type="DateTime" Precision="3" />
+    <Property Name="ASSIGNED_USER_ID" Type="Guid" />
+    <Property Name="TEAM_ID" Type="Guid" />
+    <Property Name="PUBLISHED" Type="Boolean" />
+    <Property Name="READ_ONLY" Type="Boolean" />
+    <Property Name="TEXT_ONLY" Type="Boolean" />
+    <Property Name="NAME" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="DESCRIPTION" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SUBJECT" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="BODY" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="BODY_HTML" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="TEAM_SET_ID" Type="Guid" />
+  </EntityType>
+  <EntityType Name="EMAIL">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Guid" Nullable="false" />
+    <Property Name="DELETED" Type="Boolean" Nullable="false" />
+    <Property Name="CREATED_BY" Type="Guid" />
+    <Property Name="DATE_ENTERED" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="MODIFIED_USER_ID" Type="Guid" />
+    <Property Name="DATE_MODIFIED" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DATE_MODIFIED_UTC" Type="DateTime" Precision="3" />
+    <Property Name="ASSIGNED_USER_ID" Type="Guid" />
+    <Property Name="TEAM_ID" Type="Guid" />
+    <Property Name="NAME" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="DATE_START" Type="DateTime" Precision="3" />
+    <Property Name="TIME_START" Type="DateTime" Precision="3" />
+    <Property Name="PARENT_TYPE" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="PARENT_ID" Type="Guid" />
+    <Property Name="DESCRIPTION" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DESCRIPTION_HTML" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="FROM_ADDR" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="FROM_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="TO_ADDRS" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CC_ADDRS" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="BCC_ADDRS" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="TO_ADDRS_IDS" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="TO_ADDRS_NAMES" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="TO_ADDRS_EMAILS" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CC_ADDRS_IDS" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CC_ADDRS_NAMES" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CC_ADDRS_EMAILS" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="BCC_ADDRS_IDS" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="BCC_ADDRS_NAMES" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="BCC_ADDRS_EMAILS" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="TYPE" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="STATUS" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="MESSAGE_ID" Type="String" MaxLength="851" FixedLength="false" Unicode="false" />
+    <Property Name="REPLY_TO_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="REPLY_TO_ADDR" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="INTENT" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="MAILBOX_ID" Type="Guid" />
+    <Property Name="RAW_SOURCE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="TEAM_SET_ID" Type="Guid" />
+  </EntityType>
+  <EntityType Name="LEAD">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Guid" Nullable="false" />
+    <Property Name="DELETED" Type="Boolean" Nullable="false" />
+    <Property Name="CREATED_BY" Type="Guid" />
+    <Property Name="DATE_ENTERED" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="MODIFIED_USER_ID" Type="Guid" />
+    <Property Name="DATE_MODIFIED" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DATE_MODIFIED_UTC" Type="DateTime" Precision="3" />
+    <Property Name="ASSIGNED_USER_ID" Type="Guid" />
+    <Property Name="TEAM_ID" Type="Guid" />
+    <Property Name="CONVERTED" Type="Boolean" Nullable="false" />
+    <Property Name="SALUTATION" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="FIRST_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="LAST_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="TITLE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="REFERED_BY" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="LEAD_SOURCE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="LEAD_SOURCE_DESCRIPTION" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="STATUS" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="STATUS_DESCRIPTION" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DEPARTMENT" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="REPORTS_TO_ID" Type="Guid" />
+    <Property Name="BIRTHDATE" Type="DateTime" Precision="3" />
+    <Property Name="DO_NOT_CALL" Type="Boolean" />
+    <Property Name="PHONE_HOME" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="PHONE_MOBILE" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="PHONE_WORK" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="PHONE_OTHER" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="PHONE_FAX" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="EMAIL1" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="EMAIL2" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ASSISTANT" Type="String" MaxLength="75" FixedLength="false" Unicode="true" />
+    <Property Name="ASSISTANT_PHONE" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="WEBSITE" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="EMAIL_OPT_OUT" Type="Boolean" />
+    <Property Name="INVALID_EMAIL" Type="Boolean" />
+    <Property Name="SMS_OPT_IN" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="TWITTER_SCREEN_NAME" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="PRIMARY_ADDRESS_STREET" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="PRIMARY_ADDRESS_CITY" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="PRIMARY_ADDRESS_STATE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="PRIMARY_ADDRESS_POSTALCODE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="PRIMARY_ADDRESS_COUNTRY" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ALT_ADDRESS_STREET" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="ALT_ADDRESS_CITY" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ALT_ADDRESS_STATE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ALT_ADDRESS_POSTALCODE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="ALT_ADDRESS_COUNTRY" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="DESCRIPTION" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ACCOUNT_NAME" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="ACCOUNT_DESCRIPTION" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CONTACT_ID" Type="Guid" />
+    <Property Name="ACCOUNT_ID" Type="Guid" />
+    <Property Name="OPPORTUNITY_ID" Type="Guid" />
+    <Property Name="OPPORTUNITY_NAME" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="OPPORTUNITY_AMOUNT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PORTAL_NAME" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="PORTAL_APP" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="CAMPAIGN_ID" Type="Guid" />
+    <Property Name="TEAM_SET_ID" Type="Guid" />
+  </EntityType>
+  <EntityType Name="MEETING">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Guid" Nullable="false" />
+    <Property Name="DELETED" Type="Boolean" Nullable="false" />
+    <Property Name="CREATED_BY" Type="Guid" />
+    <Property Name="DATE_ENTERED" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="MODIFIED_USER_ID" Type="Guid" />
+    <Property Name="DATE_MODIFIED" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DATE_MODIFIED_UTC" Type="DateTime" Precision="3" />
+    <Property Name="ASSIGNED_USER_ID" Type="Guid" />
+    <Property Name="TEAM_ID" Type="Guid" />
+    <Property Name="NAME" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="LOCATION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DURATION_HOURS" Type="Int32" />
+    <Property Name="DURATION_MINUTES" Type="Int32" />
+    <Property Name="DATE_START" Type="DateTime" Precision="3" />
+    <Property Name="TIME_START" Type="DateTime" Precision="3" />
+    <Property Name="DATE_END" Type="DateTime" Precision="3" />
+    <Property Name="STATUS" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="PARENT_TYPE" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="PARENT_ID" Type="Guid" />
+    <Property Name="REMINDER_TIME" Type="Int32" />
+    <Property Name="DESCRIPTION" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="OUTLOOK_ID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="TEAM_SET_ID" Type="Guid" />
+    <Property Name="EMAIL_REMINDER_TIME" Type="Int32" />
+    <Property Name="SMS_REMINDER_TIME" Type="Int32" />
+    <Property Name="REPEAT_TYPE" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="REPEAT_INTERVAL" Type="Int32" />
+    <Property Name="REPEAT_DOW" Type="String" MaxLength="7" FixedLength="false" Unicode="true" />
+    <Property Name="REPEAT_UNTIL" Type="DateTime" Precision="3" />
+    <Property Name="REPEAT_COUNT" Type="Int32" />
+    <Property Name="REPEAT_PARENT_ID" Type="Guid" />
+    <Property Name="RECURRING_SOURCE" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="ALL_DAY_EVENT" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="NOTE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Guid" Nullable="false" />
+    <Property Name="DELETED" Type="Boolean" Nullable="false" />
+    <Property Name="CREATED_BY" Type="Guid" />
+    <Property Name="DATE_ENTERED" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="MODIFIED_USER_ID" Type="Guid" />
+    <Property Name="DATE_MODIFIED" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DATE_MODIFIED_UTC" Type="DateTime" Precision="3" />
+    <Property Name="ASSIGNED_USER_ID" Type="Guid" />
+    <Property Name="TEAM_ID" Type="Guid" />
+    <Property Name="NAME" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="FILENAME" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="FILE_MIME_TYPE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="PARENT_TYPE" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="PARENT_ID" Type="Guid" />
+    <Property Name="CONTACT_ID" Type="Guid" />
+    <Property Name="PORTAL_FLAG" Type="Boolean" Nullable="false" />
+    <Property Name="EMBED_FLAG" Type="Boolean" />
+    <Property Name="DESCRIPTION" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="NOTE_ATTACHMENT_ID" Type="Guid" />
+    <Property Name="TEAM_SET_ID" Type="Guid" />
+  </EntityType>
+  <EntityType Name="PROJECT">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Guid" Nullable="false" />
+    <Property Name="DELETED" Type="Boolean" Nullable="false" />
+    <Property Name="CREATED_BY" Type="Guid" />
+    <Property Name="DATE_ENTERED" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="MODIFIED_USER_ID" Type="Guid" />
+    <Property Name="DATE_MODIFIED" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DATE_MODIFIED_UTC" Type="DateTime" Precision="3" />
+    <Property Name="ASSIGNED_USER_ID" Type="Guid" />
+    <Property Name="TEAM_ID" Type="Guid" />
+    <Property Name="NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ESTIMATED_START_DATE" Type="DateTime" Precision="3" />
+    <Property Name="ESTIMATED_END_DATE" Type="DateTime" Precision="3" />
+    <Property Name="STATUS" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="PRIORITY" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="IS_TEMPLATE" Type="Boolean" />
+    <Property Name="DESCRIPTION" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="TEAM_SET_ID" Type="Guid" />
+  </EntityType>
+  <EntityType Name="TASK">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Guid" Nullable="false" />
+    <Property Name="DELETED" Type="Boolean" Nullable="false" />
+    <Property Name="CREATED_BY" Type="Guid" />
+    <Property Name="DATE_ENTERED" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="MODIFIED_USER_ID" Type="Guid" />
+    <Property Name="DATE_MODIFIED" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DATE_MODIFIED_UTC" Type="DateTime" Precision="3" />
+    <Property Name="ASSIGNED_USER_ID" Type="Guid" />
+    <Property Name="TEAM_ID" Type="Guid" />
+    <Property Name="NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="STATUS" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="DATE_DUE_FLAG" Type="Boolean" />
+    <Property Name="DATE_DUE" Type="DateTime" Precision="3" />
+    <Property Name="TIME_DUE" Type="DateTime" Precision="3" />
+    <Property Name="DATE_START_FLAG" Type="Boolean" />
+    <Property Name="DATE_START" Type="DateTime" Precision="3" />
+    <Property Name="TIME_START" Type="DateTime" Precision="3" />
+    <Property Name="PARENT_TYPE" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="PARENT_ID" Type="Guid" />
+    <Property Name="CONTACT_ID" Type="Guid" />
+    <Property Name="PRIORITY" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="DESCRIPTION" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="TEAM_SET_ID" Type="Guid" />
+  </EntityType>
+  <EntityType Name="TEAM">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Guid" Nullable="false" />
+    <Property Name="DELETED" Type="Boolean" Nullable="false" />
+    <Property Name="CREATED_BY" Type="Guid" />
+    <Property Name="DATE_ENTERED" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="MODIFIED_USER_ID" Type="Guid" />
+    <Property Name="DATE_MODIFIED" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DATE_MODIFIED_UTC" Type="DateTime" Precision="3" />
+    <Property Name="NAME" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DESCRIPTION" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PRIVATE" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="Test_Table">
+    <Key>
+      <PropertyRef Name="SLID" />
+    </Key>
+    <Property Name="SLID" Type="Int32" Nullable="false" />
+    <Property Name="Year" Type="Int32" Nullable="false" />
+    <Property Name="Elec" Type="Int32" Nullable="false" />
+    <Property Name="Book" Type="Int32" Nullable="false" />
+    <Property Name="Home" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="USER">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Guid" Nullable="false" />
+    <Property Name="DELETED" Type="Boolean" Nullable="false" />
+    <Property Name="CREATED_BY" Type="Guid" />
+    <Property Name="DATE_ENTERED" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="MODIFIED_USER_ID" Type="Guid" />
+    <Property Name="DATE_MODIFIED" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DATE_MODIFIED_UTC" Type="DateTime" Precision="3" />
+    <Property Name="USER_NAME" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+    <Property Name="USER_PASSWORD" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="USER_HASH" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+    <Property Name="FIRST_NAME" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="LAST_NAME" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="REPORTS_TO_ID" Type="Guid" />
+    <Property Name="IS_ADMIN" Type="Boolean" />
+    <Property Name="IS_ADMIN_DELEGATE" Type="Boolean" />
+    <Property Name="RECEIVE_NOTIFICATIONS" Type="Boolean" />
+    <Property Name="DESCRIPTION" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="TITLE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DEPARTMENT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PHONE_HOME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PHONE_MOBILE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PHONE_WORK" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PHONE_OTHER" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PHONE_FAX" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EMAIL1" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="EMAIL2" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="STATUS" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="ADDRESS_STREET" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="ADDRESS_CITY" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ADDRESS_STATE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ADDRESS_COUNTRY" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="ADDRESS_POSTALCODE" Type="String" MaxLength="9" FixedLength="false" Unicode="true" />
+    <Property Name="USER_PREFERENCES" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PORTAL_ONLY" Type="Boolean" />
+    <Property Name="EMPLOYEE_STATUS" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="MESSENGER_ID" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="MESSENGER_TYPE" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="IS_GROUP" Type="Boolean" />
+    <Property Name="DEFAULT_TEAM" Type="Guid" />
+    <Property Name="SYSTEM_GENERATED_PASSWORD" Type="Boolean" />
+    <Property Name="PWD_LAST_CHANGED" Type="DateTime" Precision="3" />
+    <Property Name="MAIL_SMTPUSER" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+    <Property Name="MAIL_SMTPPASS" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="GOOGLEAPPS_SYNC_CONTACTS" Type="Boolean" />
+    <Property Name="GOOGLEAPPS_SYNC_CALENDAR" Type="Boolean" />
+    <Property Name="GOOGLEAPPS_USERNAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="GOOGLEAPPS_PASSWORD" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="FACEBOOK_ID" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="ICLOUD_SYNC_CONTACTS" Type="Boolean" />
+    <Property Name="ICLOUD_SYNC_CALENDAR" Type="Boolean" />
+    <Property Name="ICLOUD_USERNAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ICLOUD_PASSWORD" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ICLOUD_CTAG_CONTACTS" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ICLOUD_CTAG_CALENDAR" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="THEME" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="DATE_FORMAT" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="TIME_FORMAT" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="LANG" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="CURRENCY_ID" Type="Guid" />
+    <Property Name="TIMEZONE_ID" Type="Guid" />
+    <Property Name="SAVE_QUERY" Type="Boolean" />
+    <Property Name="GROUP_TABS" Type="Boolean" />
+    <Property Name="SUBPANEL_TABS" Type="Boolean" />
+    <Property Name="EXTENSION" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="SMS_OPT_IN" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="IPACCRMEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ACCOUNTS" EntityType="Self.ACCOUNT" />
+    <EntitySet Name="ACL_ROLES" EntityType="Self.ACL_ROLES" />
+    <EntitySet Name="CAMPAIGNS" EntityType="Self.CAMPAIGN" />
+    <EntitySet Name="CASES" EntityType="Self.Case" />
+    <EntitySet Name="CONTACTS" EntityType="Self.CONTACT" />
+    <EntitySet Name="DOCUMENTS" EntityType="Self.DOCUMENT" />
+    <EntitySet Name="EMAIL_TEMPLATES" EntityType="Self.EMAIL_TEMPLATES" />
+    <EntitySet Name="EMAILS" EntityType="Self.EMAIL" />
+    <EntitySet Name="LEADS" EntityType="Self.LEAD" />
+    <EntitySet Name="MEETINGS" EntityType="Self.MEETING" />
+    <EntitySet Name="NOTES" EntityType="Self.NOTE" />
+    <EntitySet Name="PROJECTs" EntityType="Self.PROJECT" />
+    <EntitySet Name="TASKS" EntityType="Self.TASK" />
+    <EntitySet Name="TEAMS" EntityType="Self.TEAM" />
+    <EntitySet Name="Test_Table" EntityType="Self.Test_Table" />
+    <EntitySet Name="USERS" EntityType="Self.USER" />
+  </EntityContainer>
+</Schema>

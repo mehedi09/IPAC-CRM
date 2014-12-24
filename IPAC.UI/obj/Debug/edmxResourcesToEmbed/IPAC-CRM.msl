@@ -1,0 +1,564 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="IPACCRMModelStoreContainer" CdmEntityContainer="IPACCRMEntities1">
+    <EntitySetMapping Name="ACCOUNTS">
+      <EntityTypeMapping TypeName="IPACCRMModel.ACCOUNT">
+        <MappingFragment StoreEntitySet="ACCOUNTS">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DELETED" ColumnName="DELETED" />
+          <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+          <ScalarProperty Name="DATE_ENTERED" ColumnName="DATE_ENTERED" />
+          <ScalarProperty Name="MODIFIED_USER_ID" ColumnName="MODIFIED_USER_ID" />
+          <ScalarProperty Name="DATE_MODIFIED" ColumnName="DATE_MODIFIED" />
+          <ScalarProperty Name="DATE_MODIFIED_UTC" ColumnName="DATE_MODIFIED_UTC" />
+          <ScalarProperty Name="ASSIGNED_USER_ID" ColumnName="ASSIGNED_USER_ID" />
+          <ScalarProperty Name="TEAM_ID" ColumnName="TEAM_ID" />
+          <ScalarProperty Name="ACCOUNT_NUMBER" ColumnName="ACCOUNT_NUMBER" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="ACCOUNT_TYPE" ColumnName="ACCOUNT_TYPE" />
+          <ScalarProperty Name="PARENT_ID" ColumnName="PARENT_ID" />
+          <ScalarProperty Name="INDUSTRY" ColumnName="INDUSTRY" />
+          <ScalarProperty Name="ANNUAL_REVENUE" ColumnName="ANNUAL_REVENUE" />
+          <ScalarProperty Name="PHONE_FAX" ColumnName="PHONE_FAX" />
+          <ScalarProperty Name="BILLING_ADDRESS_STREET" ColumnName="BILLING_ADDRESS_STREET" />
+          <ScalarProperty Name="BILLING_ADDRESS_CITY" ColumnName="BILLING_ADDRESS_CITY" />
+          <ScalarProperty Name="BILLING_ADDRESS_STATE" ColumnName="BILLING_ADDRESS_STATE" />
+          <ScalarProperty Name="BILLING_ADDRESS_POSTALCODE" ColumnName="BILLING_ADDRESS_POSTALCODE" />
+          <ScalarProperty Name="BILLING_ADDRESS_COUNTRY" ColumnName="BILLING_ADDRESS_COUNTRY" />
+          <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+          <ScalarProperty Name="RATING" ColumnName="RATING" />
+          <ScalarProperty Name="PHONE_OFFICE" ColumnName="PHONE_OFFICE" />
+          <ScalarProperty Name="PHONE_ALTERNATE" ColumnName="PHONE_ALTERNATE" />
+          <ScalarProperty Name="EMAIL1" ColumnName="EMAIL1" />
+          <ScalarProperty Name="EMAIL2" ColumnName="EMAIL2" />
+          <ScalarProperty Name="WEBSITE" ColumnName="WEBSITE" />
+          <ScalarProperty Name="OWNERSHIP" ColumnName="OWNERSHIP" />
+          <ScalarProperty Name="EMPLOYEES" ColumnName="EMPLOYEES" />
+          <ScalarProperty Name="TICKER_SYMBOL" ColumnName="TICKER_SYMBOL" />
+          <ScalarProperty Name="SIC_CODE" ColumnName="SIC_CODE" />
+          <ScalarProperty Name="SHIPPING_ADDRESS_STREET" ColumnName="SHIPPING_ADDRESS_STREET" />
+          <ScalarProperty Name="SHIPPING_ADDRESS_CITY" ColumnName="SHIPPING_ADDRESS_CITY" />
+          <ScalarProperty Name="SHIPPING_ADDRESS_STATE" ColumnName="SHIPPING_ADDRESS_STATE" />
+          <ScalarProperty Name="SHIPPING_ADDRESS_POSTALCODE" ColumnName="SHIPPING_ADDRESS_POSTALCODE" />
+          <ScalarProperty Name="SHIPPING_ADDRESS_COUNTRY" ColumnName="SHIPPING_ADDRESS_COUNTRY" />
+          <ScalarProperty Name="CAMPAIGN_ID" ColumnName="CAMPAIGN_ID" />
+          <ScalarProperty Name="TEAM_SET_ID" ColumnName="TEAM_SET_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ACL_ROLES">
+      <EntityTypeMapping TypeName="IPACCRMModel.ACL_ROLES">
+        <MappingFragment StoreEntitySet="ACL_ROLES">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DELETED" ColumnName="DELETED" />
+          <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+          <ScalarProperty Name="DATE_ENTERED" ColumnName="DATE_ENTERED" />
+          <ScalarProperty Name="MODIFIED_USER_ID" ColumnName="MODIFIED_USER_ID" />
+          <ScalarProperty Name="DATE_MODIFIED" ColumnName="DATE_MODIFIED" />
+          <ScalarProperty Name="DATE_MODIFIED_UTC" ColumnName="DATE_MODIFIED_UTC" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CAMPAIGNS">
+      <EntityTypeMapping TypeName="IPACCRMModel.CAMPAIGN">
+        <MappingFragment StoreEntitySet="CAMPAIGNS">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DELETED" ColumnName="DELETED" />
+          <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+          <ScalarProperty Name="DATE_ENTERED" ColumnName="DATE_ENTERED" />
+          <ScalarProperty Name="MODIFIED_USER_ID" ColumnName="MODIFIED_USER_ID" />
+          <ScalarProperty Name="DATE_MODIFIED" ColumnName="DATE_MODIFIED" />
+          <ScalarProperty Name="DATE_MODIFIED_UTC" ColumnName="DATE_MODIFIED_UTC" />
+          <ScalarProperty Name="ASSIGNED_USER_ID" ColumnName="ASSIGNED_USER_ID" />
+          <ScalarProperty Name="TEAM_ID" ColumnName="TEAM_ID" />
+          <ScalarProperty Name="TRACKER_KEY" ColumnName="TRACKER_KEY" />
+          <ScalarProperty Name="TRACKER_COUNT" ColumnName="TRACKER_COUNT" />
+          <ScalarProperty Name="IMPRESSIONS" ColumnName="IMPRESSIONS" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="REFER_URL" ColumnName="REFER_URL" />
+          <ScalarProperty Name="TRACKER_TEXT" ColumnName="TRACKER_TEXT" />
+          <ScalarProperty Name="START_DATE" ColumnName="START_DATE" />
+          <ScalarProperty Name="END_DATE" ColumnName="END_DATE" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+          <ScalarProperty Name="BUDGET" ColumnName="BUDGET" />
+          <ScalarProperty Name="BUDGET_USDOLLAR" ColumnName="BUDGET_USDOLLAR" />
+          <ScalarProperty Name="EXPECTED_COST" ColumnName="EXPECTED_COST" />
+          <ScalarProperty Name="EXPECTED_COST_USDOLLAR" ColumnName="EXPECTED_COST_USDOLLAR" />
+          <ScalarProperty Name="ACTUAL_COST" ColumnName="ACTUAL_COST" />
+          <ScalarProperty Name="ACTUAL_COST_USDOLLAR" ColumnName="ACTUAL_COST_USDOLLAR" />
+          <ScalarProperty Name="EXPECTED_REVENUE" ColumnName="EXPECTED_REVENUE" />
+          <ScalarProperty Name="EXPECTED_REVENUE_USDOLLAR" ColumnName="EXPECTED_REVENUE_USDOLLAR" />
+          <ScalarProperty Name="CAMPAIGN_TYPE" ColumnName="CAMPAIGN_TYPE" />
+          <ScalarProperty Name="FREQUENCY" ColumnName="FREQUENCY" />
+          <ScalarProperty Name="OBJECTIVE" ColumnName="OBJECTIVE" />
+          <ScalarProperty Name="CONTENT" ColumnName="CONTENT" />
+          <ScalarProperty Name="CURRENCY_ID" ColumnName="CURRENCY_ID" />
+          <ScalarProperty Name="TEAM_SET_ID" ColumnName="TEAM_SET_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CASES">
+      <EntityTypeMapping TypeName="IPACCRMModel.Case">
+        <MappingFragment StoreEntitySet="CASES">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DELETED" ColumnName="DELETED" />
+          <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+          <ScalarProperty Name="DATE_ENTERED" ColumnName="DATE_ENTERED" />
+          <ScalarProperty Name="MODIFIED_USER_ID" ColumnName="MODIFIED_USER_ID" />
+          <ScalarProperty Name="DATE_MODIFIED" ColumnName="DATE_MODIFIED" />
+          <ScalarProperty Name="DATE_MODIFIED_UTC" ColumnName="DATE_MODIFIED_UTC" />
+          <ScalarProperty Name="ASSIGNED_USER_ID" ColumnName="ASSIGNED_USER_ID" />
+          <ScalarProperty Name="TEAM_ID" ColumnName="TEAM_ID" />
+          <ScalarProperty Name="CASE_NUMBER" ColumnName="CASE_NUMBER" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="ACCOUNT_NAME" ColumnName="ACCOUNT_NAME" />
+          <ScalarProperty Name="ACCOUNT_ID" ColumnName="ACCOUNT_ID" />
+          <ScalarProperty Name="B2C_CONTACT_ID" ColumnName="B2C_CONTACT_ID" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+          <ScalarProperty Name="PRIORITY" ColumnName="PRIORITY" />
+          <ScalarProperty Name="TYPE" ColumnName="TYPE" />
+          <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+          <ScalarProperty Name="RESOLUTION" ColumnName="RESOLUTION" />
+          <ScalarProperty Name="WORK_LOG" ColumnName="WORK_LOG" />
+          <ScalarProperty Name="TEAM_SET_ID" ColumnName="TEAM_SET_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CONTACTS">
+      <EntityTypeMapping TypeName="IPACCRMModel.CONTACT">
+        <MappingFragment StoreEntitySet="CONTACTS">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DELETED" ColumnName="DELETED" />
+          <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+          <ScalarProperty Name="DATE_ENTERED" ColumnName="DATE_ENTERED" />
+          <ScalarProperty Name="MODIFIED_USER_ID" ColumnName="MODIFIED_USER_ID" />
+          <ScalarProperty Name="DATE_MODIFIED" ColumnName="DATE_MODIFIED" />
+          <ScalarProperty Name="DATE_MODIFIED_UTC" ColumnName="DATE_MODIFIED_UTC" />
+          <ScalarProperty Name="ASSIGNED_USER_ID" ColumnName="ASSIGNED_USER_ID" />
+          <ScalarProperty Name="TEAM_ID" ColumnName="TEAM_ID" />
+          <ScalarProperty Name="SALUTATION" ColumnName="SALUTATION" />
+          <ScalarProperty Name="FIRST_NAME" ColumnName="FIRST_NAME" />
+          <ScalarProperty Name="LAST_NAME" ColumnName="LAST_NAME" />
+          <ScalarProperty Name="LEAD_SOURCE" ColumnName="LEAD_SOURCE" />
+          <ScalarProperty Name="TITLE" ColumnName="TITLE" />
+          <ScalarProperty Name="DEPARTMENT" ColumnName="DEPARTMENT" />
+          <ScalarProperty Name="REPORTS_TO_ID" ColumnName="REPORTS_TO_ID" />
+          <ScalarProperty Name="BIRTHDATE" ColumnName="BIRTHDATE" />
+          <ScalarProperty Name="DO_NOT_CALL" ColumnName="DO_NOT_CALL" />
+          <ScalarProperty Name="PHONE_HOME" ColumnName="PHONE_HOME" />
+          <ScalarProperty Name="PHONE_MOBILE" ColumnName="PHONE_MOBILE" />
+          <ScalarProperty Name="PHONE_WORK" ColumnName="PHONE_WORK" />
+          <ScalarProperty Name="PHONE_OTHER" ColumnName="PHONE_OTHER" />
+          <ScalarProperty Name="PHONE_FAX" ColumnName="PHONE_FAX" />
+          <ScalarProperty Name="EMAIL1" ColumnName="EMAIL1" />
+          <ScalarProperty Name="EMAIL2" ColumnName="EMAIL2" />
+          <ScalarProperty Name="ASSISTANT" ColumnName="ASSISTANT" />
+          <ScalarProperty Name="ASSISTANT_PHONE" ColumnName="ASSISTANT_PHONE" />
+          <ScalarProperty Name="EMAIL_OPT_OUT" ColumnName="EMAIL_OPT_OUT" />
+          <ScalarProperty Name="INVALID_EMAIL" ColumnName="INVALID_EMAIL" />
+          <ScalarProperty Name="SMS_OPT_IN" ColumnName="SMS_OPT_IN" />
+          <ScalarProperty Name="TWITTER_SCREEN_NAME" ColumnName="TWITTER_SCREEN_NAME" />
+          <ScalarProperty Name="PRIMARY_ADDRESS_STREET" ColumnName="PRIMARY_ADDRESS_STREET" />
+          <ScalarProperty Name="PRIMARY_ADDRESS_CITY" ColumnName="PRIMARY_ADDRESS_CITY" />
+          <ScalarProperty Name="PRIMARY_ADDRESS_STATE" ColumnName="PRIMARY_ADDRESS_STATE" />
+          <ScalarProperty Name="PRIMARY_ADDRESS_POSTALCODE" ColumnName="PRIMARY_ADDRESS_POSTALCODE" />
+          <ScalarProperty Name="PRIMARY_ADDRESS_COUNTRY" ColumnName="PRIMARY_ADDRESS_COUNTRY" />
+          <ScalarProperty Name="ALT_ADDRESS_STREET" ColumnName="ALT_ADDRESS_STREET" />
+          <ScalarProperty Name="ALT_ADDRESS_CITY" ColumnName="ALT_ADDRESS_CITY" />
+          <ScalarProperty Name="ALT_ADDRESS_STATE" ColumnName="ALT_ADDRESS_STATE" />
+          <ScalarProperty Name="ALT_ADDRESS_POSTALCODE" ColumnName="ALT_ADDRESS_POSTALCODE" />
+          <ScalarProperty Name="ALT_ADDRESS_COUNTRY" ColumnName="ALT_ADDRESS_COUNTRY" />
+          <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+          <ScalarProperty Name="PORTAL_NAME" ColumnName="PORTAL_NAME" />
+          <ScalarProperty Name="PORTAL_PASSWORD" ColumnName="PORTAL_PASSWORD" />
+          <ScalarProperty Name="PORTAL_ACTIVE" ColumnName="PORTAL_ACTIVE" />
+          <ScalarProperty Name="PORTAL_APP" ColumnName="PORTAL_APP" />
+          <ScalarProperty Name="CAMPAIGN_ID" ColumnName="CAMPAIGN_ID" />
+          <ScalarProperty Name="TEAM_SET_ID" ColumnName="TEAM_SET_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DOCUMENTS">
+      <EntityTypeMapping TypeName="IPACCRMModel.DOCUMENT">
+        <MappingFragment StoreEntitySet="DOCUMENTS">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DELETED" ColumnName="DELETED" />
+          <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+          <ScalarProperty Name="DATE_ENTERED" ColumnName="DATE_ENTERED" />
+          <ScalarProperty Name="MODIFIED_USER_ID" ColumnName="MODIFIED_USER_ID" />
+          <ScalarProperty Name="DATE_MODIFIED" ColumnName="DATE_MODIFIED" />
+          <ScalarProperty Name="DATE_MODIFIED_UTC" ColumnName="DATE_MODIFIED_UTC" />
+          <ScalarProperty Name="ASSIGNED_USER_ID" ColumnName="ASSIGNED_USER_ID" />
+          <ScalarProperty Name="TEAM_ID" ColumnName="TEAM_ID" />
+          <ScalarProperty Name="DOCUMENT_NAME" ColumnName="DOCUMENT_NAME" />
+          <ScalarProperty Name="ACTIVE_DATE" ColumnName="ACTIVE_DATE" />
+          <ScalarProperty Name="EXP_DATE" ColumnName="EXP_DATE" />
+          <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+          <ScalarProperty Name="CATEGORY_ID" ColumnName="CATEGORY_ID" />
+          <ScalarProperty Name="SUBCATEGORY_ID" ColumnName="SUBCATEGORY_ID" />
+          <ScalarProperty Name="STATUS_ID" ColumnName="STATUS_ID" />
+          <ScalarProperty Name="DOCUMENT_REVISION_ID" ColumnName="DOCUMENT_REVISION_ID" />
+          <ScalarProperty Name="MAIL_MERGE_DOCUMENT" ColumnName="MAIL_MERGE_DOCUMENT" />
+          <ScalarProperty Name="RELATED_DOC_ID" ColumnName="RELATED_DOC_ID" />
+          <ScalarProperty Name="RELATED_DOC_REV_ID" ColumnName="RELATED_DOC_REV_ID" />
+          <ScalarProperty Name="IS_TEMPLATE" ColumnName="IS_TEMPLATE" />
+          <ScalarProperty Name="TEMPLATE_TYPE" ColumnName="TEMPLATE_TYPE" />
+          <ScalarProperty Name="PRIMARY_MODULE" ColumnName="PRIMARY_MODULE" />
+          <ScalarProperty Name="SECONDARY_MODULE" ColumnName="SECONDARY_MODULE" />
+          <ScalarProperty Name="TEAM_SET_ID" ColumnName="TEAM_SET_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EMAIL_TEMPLATES">
+      <EntityTypeMapping TypeName="IPACCRMModel.EMAIL_TEMPLATES">
+        <MappingFragment StoreEntitySet="EMAIL_TEMPLATES">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DELETED" ColumnName="DELETED" />
+          <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+          <ScalarProperty Name="DATE_ENTERED" ColumnName="DATE_ENTERED" />
+          <ScalarProperty Name="MODIFIED_USER_ID" ColumnName="MODIFIED_USER_ID" />
+          <ScalarProperty Name="DATE_MODIFIED" ColumnName="DATE_MODIFIED" />
+          <ScalarProperty Name="DATE_MODIFIED_UTC" ColumnName="DATE_MODIFIED_UTC" />
+          <ScalarProperty Name="ASSIGNED_USER_ID" ColumnName="ASSIGNED_USER_ID" />
+          <ScalarProperty Name="TEAM_ID" ColumnName="TEAM_ID" />
+          <ScalarProperty Name="PUBLISHED" ColumnName="PUBLISHED" />
+          <ScalarProperty Name="READ_ONLY" ColumnName="READ_ONLY" />
+          <ScalarProperty Name="TEXT_ONLY" ColumnName="TEXT_ONLY" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+          <ScalarProperty Name="SUBJECT" ColumnName="SUBJECT" />
+          <ScalarProperty Name="BODY" ColumnName="BODY" />
+          <ScalarProperty Name="BODY_HTML" ColumnName="BODY_HTML" />
+          <ScalarProperty Name="TEAM_SET_ID" ColumnName="TEAM_SET_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EMAILS">
+      <EntityTypeMapping TypeName="IPACCRMModel.EMAIL">
+        <MappingFragment StoreEntitySet="EMAILS">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DELETED" ColumnName="DELETED" />
+          <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+          <ScalarProperty Name="DATE_ENTERED" ColumnName="DATE_ENTERED" />
+          <ScalarProperty Name="MODIFIED_USER_ID" ColumnName="MODIFIED_USER_ID" />
+          <ScalarProperty Name="DATE_MODIFIED" ColumnName="DATE_MODIFIED" />
+          <ScalarProperty Name="DATE_MODIFIED_UTC" ColumnName="DATE_MODIFIED_UTC" />
+          <ScalarProperty Name="ASSIGNED_USER_ID" ColumnName="ASSIGNED_USER_ID" />
+          <ScalarProperty Name="TEAM_ID" ColumnName="TEAM_ID" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="DATE_START" ColumnName="DATE_START" />
+          <ScalarProperty Name="TIME_START" ColumnName="TIME_START" />
+          <ScalarProperty Name="PARENT_TYPE" ColumnName="PARENT_TYPE" />
+          <ScalarProperty Name="PARENT_ID" ColumnName="PARENT_ID" />
+          <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+          <ScalarProperty Name="DESCRIPTION_HTML" ColumnName="DESCRIPTION_HTML" />
+          <ScalarProperty Name="FROM_ADDR" ColumnName="FROM_ADDR" />
+          <ScalarProperty Name="FROM_NAME" ColumnName="FROM_NAME" />
+          <ScalarProperty Name="TO_ADDRS" ColumnName="TO_ADDRS" />
+          <ScalarProperty Name="CC_ADDRS" ColumnName="CC_ADDRS" />
+          <ScalarProperty Name="BCC_ADDRS" ColumnName="BCC_ADDRS" />
+          <ScalarProperty Name="TO_ADDRS_IDS" ColumnName="TO_ADDRS_IDS" />
+          <ScalarProperty Name="TO_ADDRS_NAMES" ColumnName="TO_ADDRS_NAMES" />
+          <ScalarProperty Name="TO_ADDRS_EMAILS" ColumnName="TO_ADDRS_EMAILS" />
+          <ScalarProperty Name="CC_ADDRS_IDS" ColumnName="CC_ADDRS_IDS" />
+          <ScalarProperty Name="CC_ADDRS_NAMES" ColumnName="CC_ADDRS_NAMES" />
+          <ScalarProperty Name="CC_ADDRS_EMAILS" ColumnName="CC_ADDRS_EMAILS" />
+          <ScalarProperty Name="BCC_ADDRS_IDS" ColumnName="BCC_ADDRS_IDS" />
+          <ScalarProperty Name="BCC_ADDRS_NAMES" ColumnName="BCC_ADDRS_NAMES" />
+          <ScalarProperty Name="BCC_ADDRS_EMAILS" ColumnName="BCC_ADDRS_EMAILS" />
+          <ScalarProperty Name="TYPE" ColumnName="TYPE" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+          <ScalarProperty Name="MESSAGE_ID" ColumnName="MESSAGE_ID" />
+          <ScalarProperty Name="REPLY_TO_NAME" ColumnName="REPLY_TO_NAME" />
+          <ScalarProperty Name="REPLY_TO_ADDR" ColumnName="REPLY_TO_ADDR" />
+          <ScalarProperty Name="INTENT" ColumnName="INTENT" />
+          <ScalarProperty Name="MAILBOX_ID" ColumnName="MAILBOX_ID" />
+          <ScalarProperty Name="RAW_SOURCE" ColumnName="RAW_SOURCE" />
+          <ScalarProperty Name="TEAM_SET_ID" ColumnName="TEAM_SET_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LEADS">
+      <EntityTypeMapping TypeName="IPACCRMModel.LEAD">
+        <MappingFragment StoreEntitySet="LEADS">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DELETED" ColumnName="DELETED" />
+          <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+          <ScalarProperty Name="DATE_ENTERED" ColumnName="DATE_ENTERED" />
+          <ScalarProperty Name="MODIFIED_USER_ID" ColumnName="MODIFIED_USER_ID" />
+          <ScalarProperty Name="DATE_MODIFIED" ColumnName="DATE_MODIFIED" />
+          <ScalarProperty Name="DATE_MODIFIED_UTC" ColumnName="DATE_MODIFIED_UTC" />
+          <ScalarProperty Name="ASSIGNED_USER_ID" ColumnName="ASSIGNED_USER_ID" />
+          <ScalarProperty Name="TEAM_ID" ColumnName="TEAM_ID" />
+          <ScalarProperty Name="CONVERTED" ColumnName="CONVERTED" />
+          <ScalarProperty Name="SALUTATION" ColumnName="SALUTATION" />
+          <ScalarProperty Name="FIRST_NAME" ColumnName="FIRST_NAME" />
+          <ScalarProperty Name="LAST_NAME" ColumnName="LAST_NAME" />
+          <ScalarProperty Name="TITLE" ColumnName="TITLE" />
+          <ScalarProperty Name="REFERED_BY" ColumnName="REFERED_BY" />
+          <ScalarProperty Name="LEAD_SOURCE" ColumnName="LEAD_SOURCE" />
+          <ScalarProperty Name="LEAD_SOURCE_DESCRIPTION" ColumnName="LEAD_SOURCE_DESCRIPTION" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+          <ScalarProperty Name="STATUS_DESCRIPTION" ColumnName="STATUS_DESCRIPTION" />
+          <ScalarProperty Name="DEPARTMENT" ColumnName="DEPARTMENT" />
+          <ScalarProperty Name="REPORTS_TO_ID" ColumnName="REPORTS_TO_ID" />
+          <ScalarProperty Name="BIRTHDATE" ColumnName="BIRTHDATE" />
+          <ScalarProperty Name="DO_NOT_CALL" ColumnName="DO_NOT_CALL" />
+          <ScalarProperty Name="PHONE_HOME" ColumnName="PHONE_HOME" />
+          <ScalarProperty Name="PHONE_MOBILE" ColumnName="PHONE_MOBILE" />
+          <ScalarProperty Name="PHONE_WORK" ColumnName="PHONE_WORK" />
+          <ScalarProperty Name="PHONE_OTHER" ColumnName="PHONE_OTHER" />
+          <ScalarProperty Name="PHONE_FAX" ColumnName="PHONE_FAX" />
+          <ScalarProperty Name="EMAIL1" ColumnName="EMAIL1" />
+          <ScalarProperty Name="EMAIL2" ColumnName="EMAIL2" />
+          <ScalarProperty Name="ASSISTANT" ColumnName="ASSISTANT" />
+          <ScalarProperty Name="ASSISTANT_PHONE" ColumnName="ASSISTANT_PHONE" />
+          <ScalarProperty Name="WEBSITE" ColumnName="WEBSITE" />
+          <ScalarProperty Name="EMAIL_OPT_OUT" ColumnName="EMAIL_OPT_OUT" />
+          <ScalarProperty Name="INVALID_EMAIL" ColumnName="INVALID_EMAIL" />
+          <ScalarProperty Name="SMS_OPT_IN" ColumnName="SMS_OPT_IN" />
+          <ScalarProperty Name="TWITTER_SCREEN_NAME" ColumnName="TWITTER_SCREEN_NAME" />
+          <ScalarProperty Name="PRIMARY_ADDRESS_STREET" ColumnName="PRIMARY_ADDRESS_STREET" />
+          <ScalarProperty Name="PRIMARY_ADDRESS_CITY" ColumnName="PRIMARY_ADDRESS_CITY" />
+          <ScalarProperty Name="PRIMARY_ADDRESS_STATE" ColumnName="PRIMARY_ADDRESS_STATE" />
+          <ScalarProperty Name="PRIMARY_ADDRESS_POSTALCODE" ColumnName="PRIMARY_ADDRESS_POSTALCODE" />
+          <ScalarProperty Name="PRIMARY_ADDRESS_COUNTRY" ColumnName="PRIMARY_ADDRESS_COUNTRY" />
+          <ScalarProperty Name="ALT_ADDRESS_STREET" ColumnName="ALT_ADDRESS_STREET" />
+          <ScalarProperty Name="ALT_ADDRESS_CITY" ColumnName="ALT_ADDRESS_CITY" />
+          <ScalarProperty Name="ALT_ADDRESS_STATE" ColumnName="ALT_ADDRESS_STATE" />
+          <ScalarProperty Name="ALT_ADDRESS_POSTALCODE" ColumnName="ALT_ADDRESS_POSTALCODE" />
+          <ScalarProperty Name="ALT_ADDRESS_COUNTRY" ColumnName="ALT_ADDRESS_COUNTRY" />
+          <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+          <ScalarProperty Name="ACCOUNT_NAME" ColumnName="ACCOUNT_NAME" />
+          <ScalarProperty Name="ACCOUNT_DESCRIPTION" ColumnName="ACCOUNT_DESCRIPTION" />
+          <ScalarProperty Name="CONTACT_ID" ColumnName="CONTACT_ID" />
+          <ScalarProperty Name="ACCOUNT_ID" ColumnName="ACCOUNT_ID" />
+          <ScalarProperty Name="OPPORTUNITY_ID" ColumnName="OPPORTUNITY_ID" />
+          <ScalarProperty Name="OPPORTUNITY_NAME" ColumnName="OPPORTUNITY_NAME" />
+          <ScalarProperty Name="OPPORTUNITY_AMOUNT" ColumnName="OPPORTUNITY_AMOUNT" />
+          <ScalarProperty Name="PORTAL_NAME" ColumnName="PORTAL_NAME" />
+          <ScalarProperty Name="PORTAL_APP" ColumnName="PORTAL_APP" />
+          <ScalarProperty Name="CAMPAIGN_ID" ColumnName="CAMPAIGN_ID" />
+          <ScalarProperty Name="TEAM_SET_ID" ColumnName="TEAM_SET_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MEETINGS">
+      <EntityTypeMapping TypeName="IPACCRMModel.MEETING">
+        <MappingFragment StoreEntitySet="MEETINGS">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DELETED" ColumnName="DELETED" />
+          <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+          <ScalarProperty Name="DATE_ENTERED" ColumnName="DATE_ENTERED" />
+          <ScalarProperty Name="MODIFIED_USER_ID" ColumnName="MODIFIED_USER_ID" />
+          <ScalarProperty Name="DATE_MODIFIED" ColumnName="DATE_MODIFIED" />
+          <ScalarProperty Name="DATE_MODIFIED_UTC" ColumnName="DATE_MODIFIED_UTC" />
+          <ScalarProperty Name="ASSIGNED_USER_ID" ColumnName="ASSIGNED_USER_ID" />
+          <ScalarProperty Name="TEAM_ID" ColumnName="TEAM_ID" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="LOCATION" ColumnName="LOCATION" />
+          <ScalarProperty Name="DURATION_HOURS" ColumnName="DURATION_HOURS" />
+          <ScalarProperty Name="DURATION_MINUTES" ColumnName="DURATION_MINUTES" />
+          <ScalarProperty Name="DATE_START" ColumnName="DATE_START" />
+          <ScalarProperty Name="TIME_START" ColumnName="TIME_START" />
+          <ScalarProperty Name="DATE_END" ColumnName="DATE_END" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+          <ScalarProperty Name="PARENT_TYPE" ColumnName="PARENT_TYPE" />
+          <ScalarProperty Name="PARENT_ID" ColumnName="PARENT_ID" />
+          <ScalarProperty Name="REMINDER_TIME" ColumnName="REMINDER_TIME" />
+          <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+          <ScalarProperty Name="OUTLOOK_ID" ColumnName="OUTLOOK_ID" />
+          <ScalarProperty Name="TEAM_SET_ID" ColumnName="TEAM_SET_ID" />
+          <ScalarProperty Name="EMAIL_REMINDER_TIME" ColumnName="EMAIL_REMINDER_TIME" />
+          <ScalarProperty Name="SMS_REMINDER_TIME" ColumnName="SMS_REMINDER_TIME" />
+          <ScalarProperty Name="REPEAT_TYPE" ColumnName="REPEAT_TYPE" />
+          <ScalarProperty Name="REPEAT_INTERVAL" ColumnName="REPEAT_INTERVAL" />
+          <ScalarProperty Name="REPEAT_DOW" ColumnName="REPEAT_DOW" />
+          <ScalarProperty Name="REPEAT_UNTIL" ColumnName="REPEAT_UNTIL" />
+          <ScalarProperty Name="REPEAT_COUNT" ColumnName="REPEAT_COUNT" />
+          <ScalarProperty Name="REPEAT_PARENT_ID" ColumnName="REPEAT_PARENT_ID" />
+          <ScalarProperty Name="RECURRING_SOURCE" ColumnName="RECURRING_SOURCE" />
+          <ScalarProperty Name="ALL_DAY_EVENT" ColumnName="ALL_DAY_EVENT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NOTES">
+      <EntityTypeMapping TypeName="IPACCRMModel.NOTE">
+        <MappingFragment StoreEntitySet="NOTES">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DELETED" ColumnName="DELETED" />
+          <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+          <ScalarProperty Name="DATE_ENTERED" ColumnName="DATE_ENTERED" />
+          <ScalarProperty Name="MODIFIED_USER_ID" ColumnName="MODIFIED_USER_ID" />
+          <ScalarProperty Name="DATE_MODIFIED" ColumnName="DATE_MODIFIED" />
+          <ScalarProperty Name="DATE_MODIFIED_UTC" ColumnName="DATE_MODIFIED_UTC" />
+          <ScalarProperty Name="ASSIGNED_USER_ID" ColumnName="ASSIGNED_USER_ID" />
+          <ScalarProperty Name="TEAM_ID" ColumnName="TEAM_ID" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="FILENAME" ColumnName="FILENAME" />
+          <ScalarProperty Name="FILE_MIME_TYPE" ColumnName="FILE_MIME_TYPE" />
+          <ScalarProperty Name="PARENT_TYPE" ColumnName="PARENT_TYPE" />
+          <ScalarProperty Name="PARENT_ID" ColumnName="PARENT_ID" />
+          <ScalarProperty Name="CONTACT_ID" ColumnName="CONTACT_ID" />
+          <ScalarProperty Name="PORTAL_FLAG" ColumnName="PORTAL_FLAG" />
+          <ScalarProperty Name="EMBED_FLAG" ColumnName="EMBED_FLAG" />
+          <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+          <ScalarProperty Name="NOTE_ATTACHMENT_ID" ColumnName="NOTE_ATTACHMENT_ID" />
+          <ScalarProperty Name="TEAM_SET_ID" ColumnName="TEAM_SET_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PROJECTs">
+      <EntityTypeMapping TypeName="IPACCRMModel.PROJECT">
+        <MappingFragment StoreEntitySet="PROJECT">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DELETED" ColumnName="DELETED" />
+          <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+          <ScalarProperty Name="DATE_ENTERED" ColumnName="DATE_ENTERED" />
+          <ScalarProperty Name="MODIFIED_USER_ID" ColumnName="MODIFIED_USER_ID" />
+          <ScalarProperty Name="DATE_MODIFIED" ColumnName="DATE_MODIFIED" />
+          <ScalarProperty Name="DATE_MODIFIED_UTC" ColumnName="DATE_MODIFIED_UTC" />
+          <ScalarProperty Name="ASSIGNED_USER_ID" ColumnName="ASSIGNED_USER_ID" />
+          <ScalarProperty Name="TEAM_ID" ColumnName="TEAM_ID" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="ESTIMATED_START_DATE" ColumnName="ESTIMATED_START_DATE" />
+          <ScalarProperty Name="ESTIMATED_END_DATE" ColumnName="ESTIMATED_END_DATE" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+          <ScalarProperty Name="PRIORITY" ColumnName="PRIORITY" />
+          <ScalarProperty Name="IS_TEMPLATE" ColumnName="IS_TEMPLATE" />
+          <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+          <ScalarProperty Name="TEAM_SET_ID" ColumnName="TEAM_SET_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TASKS">
+      <EntityTypeMapping TypeName="IPACCRMModel.TASK">
+        <MappingFragment StoreEntitySet="TASKS">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DELETED" ColumnName="DELETED" />
+          <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+          <ScalarProperty Name="DATE_ENTERED" ColumnName="DATE_ENTERED" />
+          <ScalarProperty Name="MODIFIED_USER_ID" ColumnName="MODIFIED_USER_ID" />
+          <ScalarProperty Name="DATE_MODIFIED" ColumnName="DATE_MODIFIED" />
+          <ScalarProperty Name="DATE_MODIFIED_UTC" ColumnName="DATE_MODIFIED_UTC" />
+          <ScalarProperty Name="ASSIGNED_USER_ID" ColumnName="ASSIGNED_USER_ID" />
+          <ScalarProperty Name="TEAM_ID" ColumnName="TEAM_ID" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+          <ScalarProperty Name="DATE_DUE_FLAG" ColumnName="DATE_DUE_FLAG" />
+          <ScalarProperty Name="DATE_DUE" ColumnName="DATE_DUE" />
+          <ScalarProperty Name="TIME_DUE" ColumnName="TIME_DUE" />
+          <ScalarProperty Name="DATE_START_FLAG" ColumnName="DATE_START_FLAG" />
+          <ScalarProperty Name="DATE_START" ColumnName="DATE_START" />
+          <ScalarProperty Name="TIME_START" ColumnName="TIME_START" />
+          <ScalarProperty Name="PARENT_TYPE" ColumnName="PARENT_TYPE" />
+          <ScalarProperty Name="PARENT_ID" ColumnName="PARENT_ID" />
+          <ScalarProperty Name="CONTACT_ID" ColumnName="CONTACT_ID" />
+          <ScalarProperty Name="PRIORITY" ColumnName="PRIORITY" />
+          <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+          <ScalarProperty Name="TEAM_SET_ID" ColumnName="TEAM_SET_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TEAMS">
+      <EntityTypeMapping TypeName="IPACCRMModel.TEAM">
+        <MappingFragment StoreEntitySet="TEAMS">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DELETED" ColumnName="DELETED" />
+          <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+          <ScalarProperty Name="DATE_ENTERED" ColumnName="DATE_ENTERED" />
+          <ScalarProperty Name="MODIFIED_USER_ID" ColumnName="MODIFIED_USER_ID" />
+          <ScalarProperty Name="DATE_MODIFIED" ColumnName="DATE_MODIFIED" />
+          <ScalarProperty Name="DATE_MODIFIED_UTC" ColumnName="DATE_MODIFIED_UTC" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+          <ScalarProperty Name="PRIVATE" ColumnName="PRIVATE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Test_Table">
+      <EntityTypeMapping TypeName="IPACCRMModel.Test_Table">
+        <MappingFragment StoreEntitySet="Test_Table">
+          <ScalarProperty Name="SLID" ColumnName="SLID" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+          <ScalarProperty Name="Elec" ColumnName="Elec" />
+          <ScalarProperty Name="Book" ColumnName="Book" />
+          <ScalarProperty Name="Home" ColumnName="Home" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="USERS">
+      <EntityTypeMapping TypeName="IPACCRMModel.USER">
+        <MappingFragment StoreEntitySet="USERS">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DELETED" ColumnName="DELETED" />
+          <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+          <ScalarProperty Name="DATE_ENTERED" ColumnName="DATE_ENTERED" />
+          <ScalarProperty Name="MODIFIED_USER_ID" ColumnName="MODIFIED_USER_ID" />
+          <ScalarProperty Name="DATE_MODIFIED" ColumnName="DATE_MODIFIED" />
+          <ScalarProperty Name="DATE_MODIFIED_UTC" ColumnName="DATE_MODIFIED_UTC" />
+          <ScalarProperty Name="USER_NAME" ColumnName="USER_NAME" />
+          <ScalarProperty Name="USER_PASSWORD" ColumnName="USER_PASSWORD" />
+          <ScalarProperty Name="USER_HASH" ColumnName="USER_HASH" />
+          <ScalarProperty Name="FIRST_NAME" ColumnName="FIRST_NAME" />
+          <ScalarProperty Name="LAST_NAME" ColumnName="LAST_NAME" />
+          <ScalarProperty Name="REPORTS_TO_ID" ColumnName="REPORTS_TO_ID" />
+          <ScalarProperty Name="IS_ADMIN" ColumnName="IS_ADMIN" />
+          <ScalarProperty Name="IS_ADMIN_DELEGATE" ColumnName="IS_ADMIN_DELEGATE" />
+          <ScalarProperty Name="RECEIVE_NOTIFICATIONS" ColumnName="RECEIVE_NOTIFICATIONS" />
+          <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+          <ScalarProperty Name="TITLE" ColumnName="TITLE" />
+          <ScalarProperty Name="DEPARTMENT" ColumnName="DEPARTMENT" />
+          <ScalarProperty Name="PHONE_HOME" ColumnName="PHONE_HOME" />
+          <ScalarProperty Name="PHONE_MOBILE" ColumnName="PHONE_MOBILE" />
+          <ScalarProperty Name="PHONE_WORK" ColumnName="PHONE_WORK" />
+          <ScalarProperty Name="PHONE_OTHER" ColumnName="PHONE_OTHER" />
+          <ScalarProperty Name="PHONE_FAX" ColumnName="PHONE_FAX" />
+          <ScalarProperty Name="EMAIL1" ColumnName="EMAIL1" />
+          <ScalarProperty Name="EMAIL2" ColumnName="EMAIL2" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+          <ScalarProperty Name="ADDRESS_STREET" ColumnName="ADDRESS_STREET" />
+          <ScalarProperty Name="ADDRESS_CITY" ColumnName="ADDRESS_CITY" />
+          <ScalarProperty Name="ADDRESS_STATE" ColumnName="ADDRESS_STATE" />
+          <ScalarProperty Name="ADDRESS_COUNTRY" ColumnName="ADDRESS_COUNTRY" />
+          <ScalarProperty Name="ADDRESS_POSTALCODE" ColumnName="ADDRESS_POSTALCODE" />
+          <ScalarProperty Name="USER_PREFERENCES" ColumnName="USER_PREFERENCES" />
+          <ScalarProperty Name="PORTAL_ONLY" ColumnName="PORTAL_ONLY" />
+          <ScalarProperty Name="EMPLOYEE_STATUS" ColumnName="EMPLOYEE_STATUS" />
+          <ScalarProperty Name="MESSENGER_ID" ColumnName="MESSENGER_ID" />
+          <ScalarProperty Name="MESSENGER_TYPE" ColumnName="MESSENGER_TYPE" />
+          <ScalarProperty Name="IS_GROUP" ColumnName="IS_GROUP" />
+          <ScalarProperty Name="DEFAULT_TEAM" ColumnName="DEFAULT_TEAM" />
+          <ScalarProperty Name="SYSTEM_GENERATED_PASSWORD" ColumnName="SYSTEM_GENERATED_PASSWORD" />
+          <ScalarProperty Name="PWD_LAST_CHANGED" ColumnName="PWD_LAST_CHANGED" />
+          <ScalarProperty Name="MAIL_SMTPUSER" ColumnName="MAIL_SMTPUSER" />
+          <ScalarProperty Name="MAIL_SMTPPASS" ColumnName="MAIL_SMTPPASS" />
+          <ScalarProperty Name="GOOGLEAPPS_SYNC_CONTACTS" ColumnName="GOOGLEAPPS_SYNC_CONTACTS" />
+          <ScalarProperty Name="GOOGLEAPPS_SYNC_CALENDAR" ColumnName="GOOGLEAPPS_SYNC_CALENDAR" />
+          <ScalarProperty Name="GOOGLEAPPS_USERNAME" ColumnName="GOOGLEAPPS_USERNAME" />
+          <ScalarProperty Name="GOOGLEAPPS_PASSWORD" ColumnName="GOOGLEAPPS_PASSWORD" />
+          <ScalarProperty Name="FACEBOOK_ID" ColumnName="FACEBOOK_ID" />
+          <ScalarProperty Name="ICLOUD_SYNC_CONTACTS" ColumnName="ICLOUD_SYNC_CONTACTS" />
+          <ScalarProperty Name="ICLOUD_SYNC_CALENDAR" ColumnName="ICLOUD_SYNC_CALENDAR" />
+          <ScalarProperty Name="ICLOUD_USERNAME" ColumnName="ICLOUD_USERNAME" />
+          <ScalarProperty Name="ICLOUD_PASSWORD" ColumnName="ICLOUD_PASSWORD" />
+          <ScalarProperty Name="ICLOUD_CTAG_CONTACTS" ColumnName="ICLOUD_CTAG_CONTACTS" />
+          <ScalarProperty Name="ICLOUD_CTAG_CALENDAR" ColumnName="ICLOUD_CTAG_CALENDAR" />
+          <ScalarProperty Name="THEME" ColumnName="THEME" />
+          <ScalarProperty Name="DATE_FORMAT" ColumnName="DATE_FORMAT" />
+          <ScalarProperty Name="TIME_FORMAT" ColumnName="TIME_FORMAT" />
+          <ScalarProperty Name="LANG" ColumnName="LANG" />
+          <ScalarProperty Name="CURRENCY_ID" ColumnName="CURRENCY_ID" />
+          <ScalarProperty Name="TIMEZONE_ID" ColumnName="TIMEZONE_ID" />
+          <ScalarProperty Name="SAVE_QUERY" ColumnName="SAVE_QUERY" />
+          <ScalarProperty Name="GROUP_TABS" ColumnName="GROUP_TABS" />
+          <ScalarProperty Name="SUBPANEL_TABS" ColumnName="SUBPANEL_TABS" />
+          <ScalarProperty Name="EXTENSION" ColumnName="EXTENSION" />
+          <ScalarProperty Name="SMS_OPT_IN" ColumnName="SMS_OPT_IN" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
